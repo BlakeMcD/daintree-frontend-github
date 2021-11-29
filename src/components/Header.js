@@ -7,7 +7,7 @@ import NavSignIn from './NavSignIn'
 function Header() {
     return (
         <>
-            <h1>Header</h1>
+            <p>HEADER</p>
             <header>
               <NavLink/>
               <NavLink/>

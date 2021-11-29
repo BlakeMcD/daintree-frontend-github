@@ -2,9 +2,9 @@ import React from 'react'
 
 function LogoSquareLarge() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <p>LogoImage</p>
+        </>
     )
 }
 
