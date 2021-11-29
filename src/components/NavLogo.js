@@ -2,9 +2,9 @@ import React from 'react'
 
 function NavLogo() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <p>NavLogo</p>
+        </>
     )
 }
 

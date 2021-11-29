@@ -2,9 +2,9 @@ import React from 'react'
 
 function NavSignIn() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <p>SignIn</p>
+        </>
     )
 }
 
