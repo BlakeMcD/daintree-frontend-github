@@ -9,10 +9,10 @@ function Header() {
         <>
             <p>HEADER</p>
             <header>
-              <NavLink/>
-              <NavLink/>
-              <NavLink/>
-              <NavLink/>
+              <NavLink text={"COLLECTION"}/>
+              <NavLink text={"STORES"}/>
+              <NavLink text={"MEN"}/>
+              <NavLink text={"WOMEN"}/>
               <NavLogo/>
               <NavCart/>
               <NavSignIn/>

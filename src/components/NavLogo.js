@@ -1,9 +1,10 @@
 import React from 'react'
+import DaintreeLandscapeFinalTan from '../images/DaintreeLandscapeFinalWhite.png'
 
 function NavLogo() {
     return (
         <>
-            <p>NavLogo</p>
+            <img className="Header_Logo" src={DaintreeLandscapeFinalTan} alt="Daintree Logo homepage link"></img>
         </>
     )
 }

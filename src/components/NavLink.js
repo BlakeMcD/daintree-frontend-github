@@ -1,9 +1,9 @@
 import React from 'react'
 
-function NavLink() {
+function NavLink(props) {
     return (
         <>
-            <p>Navlink</p>
+            <p>{props.text}</p>
         </>
     )
 }
