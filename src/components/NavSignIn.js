@@ -1,9 +1,10 @@
 import React from 'react'
+import UserSigninWhite from '../images/UserSigninWhite.png'
 
 function NavSignIn() {
     return (
         <>
-            <p>SignIn</p>
+            <img src={UserSigninWhite} alt="Sign In"></img>
         </>
     )
 }

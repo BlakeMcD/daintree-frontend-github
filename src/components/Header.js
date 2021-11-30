@@ -9,13 +9,29 @@ function Header() {
         <>
             <p>HEADER</p>
             <header>
-              <NavLink text={"COLLECTION"}/>
-              <NavLink text={"STORES"}/>
-              <NavLink text={"MEN"}/>
-              <NavLink text={"WOMEN"}/>
-              <NavLogo/>
-              <NavCart/>
-              <NavSignIn/>
+                <div className="headerBox"> 
+                    <div className="headerBox__navIcon">
+                        <NavLink text={"COLLECTION"}/>
+                    </div>
+                    <div className="headerBox__navIcon">
+                        <NavLink text={"STORES"}/>
+                    </div>
+                    <div className="headerBox__navIcon">
+                        <NavLink text={"MEN"}/>
+                    </div>
+                    <div className="headerBox__navIcon">
+                        <NavLink text={"WOMEN"}/>
+                    </div>
+                </div>
+                <div className="headerBox">
+                    <div className="headerBox__logo">
+                        <NavLogo/>
+                    </div>
+                </div>
+                <div className="headerBox">
+                    <NavCart/>
+                    <NavSignIn/>
+                </div>
             </header>
         </>
     )

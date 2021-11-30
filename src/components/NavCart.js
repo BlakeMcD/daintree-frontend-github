@@ -1,9 +1,10 @@
 import React from 'react'
+import ShoppingCartWhite from '../images/ShoppingCartWhite.png'
 
 function NavCart() {
     return (
         <>
-            <p>Cart</p>
+            <img src={ShoppingCartWhite} alt="Cart"></img>
         </>
     )
 }

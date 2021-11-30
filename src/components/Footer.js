@@ -9,21 +9,21 @@ import BagWhite from '../images/BagWhite.png'
 function Footer() {
     return (
         <footer>
-            <div className="footer_icon_container">
-                <img className="footer_icon" src={DeliveryWhite} alt="Free Delivery"/>
-                <p className="footer_text">FREE DELIVERY</p>
+            <div className="footerContainer">
+                <img className="footerContainer__icon" src={DeliveryWhite} alt="Free Delivery"/>
+                <p className="footerContainer__text">FREE DELIVERY</p>
             </div>
-            <div className="footer_icon_container">
-                <img className="footer_icon" src={CreditCardWhite} alt="Buy Now Pay Later"/>
-                <p className="footer_text">BUY NOW PAY LATER</p>
+            <div className="footerContainer">
+                <img className="footerContainer__icon" src={CreditCardWhite} alt="Buy Now Pay Later"/>
+                <p className="footerContainer__text">BUY NOW PAY LATER</p>
             </div>
-            <div className="footer_icon_container">
-                <img className="footer_icon" src={BoomerangWhite} alt="Free Returns"/>
-                <p className="footer_text">FREE RETURNS</p>
+            <div className="footerContainer">
+                <img className="footerContainer__icon" src={BoomerangWhite} alt="Free Returns"/>
+                <p className="footerContainer__text">FREE RETURNS</p>
             </div>
-            <div className="footer_icon_container">
-                <img className="footer_icon" src={BagWhite} alt="Click and Collect"/>
-                <p className="footer_text">CLICK & COLLECT</p>
+            <div className="footerContainer">
+                <img className="footerContainer__icon" src={BagWhite} alt="Click and Collect"/>
+                <p className="footerContainer__text">CLICK & COLLECT</p>
             </div>
         </footer>
     )
