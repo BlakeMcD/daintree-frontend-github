@@ -2,9 +2,7 @@ import React from 'react'
 
 function AddToCart() {
     return (
-        <div>
-            
-        </div>
+        <a className="addToCartButton">ADD TO CART</a>
     )
 }
 

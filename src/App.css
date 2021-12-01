@@ -77,6 +77,26 @@ h2 {
   background-color: #464646;
 }
 
+.addToCartButton {
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  background-color: #e8e8e8; 
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+}
+
+.addToCartButton:hover {
+  background-color: #464646;
+  color: white;
+}
+
+
+
 /* HEADER */
 header { 
   display: flex;
@@ -171,6 +191,8 @@ footer {
 
 .item {
   width: 300px;
+  text-align: center;
+  /* background-color: lightgrey; */
 }
 
 .item__images {

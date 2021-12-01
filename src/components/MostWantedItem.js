@@ -1,4 +1,5 @@
 import React from 'react'
+import AddToCart from './AddToCart'
 
 function MostWantedItem() {
     return (
@@ -10,6 +11,7 @@ function MostWantedItem() {
             </div>
             <p className="item__title">Item Title</p>
             <p className="item__price">Item Price</p>
+            <AddToCart/>
         </div>
     )
 }
