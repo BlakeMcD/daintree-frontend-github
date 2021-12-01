@@ -12,9 +12,13 @@
      return (
          <>
              <Header/>
-             <HomePageImage imageSource={HomepageMan01} imageAlt="Shop Men's Collection Image"/>
-             <HomePageImage imageSource={HomepageWoman01} imageAlt="Shop Women's Collection Image"/>
-             <StoreContainer/>
+            <div className="spacer"/>
+            <div className="homepageImageContainer">
+                <HomePageImage imageSource={HomepageMan01} imageAlt="Shop Men's Collection Image" buttonText={"MEN"}/>
+                <HomePageImage imageSource={HomepageWoman01} imageAlt="Shop Women's Collection Image" buttonText={"WOMEN"}/>
+            </div>
+            <h2>Featured Stores</h2>
+            <StoreContainer/>
              <MostWantedContainer/>
              <Footer/>
          </>
