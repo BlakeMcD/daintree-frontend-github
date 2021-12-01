@@ -1,5 +1,9 @@
+
+
 .App {
   text-align: center;
+  box-sizing: border-box;
+  margin: 0px;
 }
 
 .App-logo {
@@ -37,6 +41,40 @@
   }
 }
 
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* HEADER */
+h2 {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 2em;
+}
+
+/* SPACER */
+.spacer {
+  height: 50px;
+}
+
+/* BUTTON */
+.button {
+  background-color: #191919; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 32px;
+  border-radius: 8px;
+  transition-duration: 0.5s;
+}
+
+.button:hover {
+  background-color: #464646;
+}
+
 /* HEADER */
 header { 
   display: flex;
@@ -64,8 +102,14 @@ header {
   align-items: center;
 }
 
+/* images and heights */
 .headerBox__logo img {
   height: 50px;
+}
+
+.headerBox__userLinks img {
+  height: 50px;
+  padding: 0px 0px 0px 30px;
 }
 
 /* FOOTER */
@@ -80,4 +124,43 @@ footer {
 
 .footerContainer {
   text-align: center;
+}
+
+.footerContainer__icon {
+  height: 80px;
+}
+
+/* HOMEPAGE IMAGES */
+.homepageImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.homepageImageComponent {
+  position: relative;
+  text-align: center;
+}
+
+.homepageImageComponent__image {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.homepageImageComponent__button {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  
+  transform: translate(-50%, -50%);
+}
+
+/* STORE CONTAINER */
+.homepageStoreContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logoSquareLarge {
+  width: 200px;
 }

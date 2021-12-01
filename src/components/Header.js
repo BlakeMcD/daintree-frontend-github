@@ -7,7 +7,6 @@ import NavSignIn from './NavSignIn'
 function Header() {
     return (
         <>
-            <p>HEADER</p>
             <header>
                 <div className="headerBox"> 
                     <div className="headerBox__navIcon">
@@ -29,8 +28,10 @@ function Header() {
                     </div>
                 </div>
                 <div className="headerBox">
-                    <NavCart/>
-                    <NavSignIn/>
+                    <div className="headerBox__userLinks">
+                        <NavCart/>
+                        <NavSignIn/>
+                    </div>
                 </div>
             </header>
         </>
