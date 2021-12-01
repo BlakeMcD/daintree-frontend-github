@@ -19,7 +19,9 @@
             </div>
             <h2>Featured Stores</h2>
             <StoreContainer/>
+            <h2>Most Wanted</h2>
              <MostWantedContainer/>
+             <div className="spacer"/>
              <Footer/>
          </>
      )

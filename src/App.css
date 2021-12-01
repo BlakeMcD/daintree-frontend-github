@@ -166,3 +166,42 @@ footer {
 .logoSquareLarge {
   width: 200px;
 }
+
+/* ITEM */
+
+.item {
+  width: 300px;
+}
+
+.item__images {
+  position: relative;
+}
+
+.item__images__itemImage {
+  width: 300px;
+}
+
+.item__images__itemStoreLogo {
+  width: 50px;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+
+.item__title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.item__price {
+  text-align: center;
+  font-style: italic;
+}
+
+/* MOST WANTED SECTION */
+.mostWantedSection {
+  margin: 0px 10% 0px 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -3,13 +3,12 @@ import MostWantedItem from './MostWantedItem'
 
 function MostWantedContainer() {
     return (
-        <>
-            <p>MOST WANTED CONTAINER</p>
+        <div className="mostWantedSection">
             <MostWantedItem/>
             <MostWantedItem/>
             <MostWantedItem/>
             <MostWantedItem/>
-        </>
+        </div>
     )
 }
 
