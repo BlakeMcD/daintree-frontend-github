@@ -1,13 +1,12 @@
 import React from 'react'
-import Header from '../Header'
-import Footer from '../Footer'
-
+import { Link } from 'react-router-dom'
+import ShoppingCartWhite from '../../images/ShoppingCartWhite.png'
 
 function NavCart() {
     return (
-        <>
-            
-        </>
+        <Link to={"./cart"}>
+            <img src={ShoppingCartWhite} alt="Sign In"></img>
+        </Link>
     )
 }
 
