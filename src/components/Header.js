@@ -1,8 +1,10 @@
 import React from 'react'
-import NavLink from './NavLink'
-import NavLogo from './NavLogo'
-import NavCart from './NavCart'
-import NavSignIn from './NavSignIn'
+import NavLink from "./navigation/NavLink";
+import NavLogo from "./navigation/NavLogo";
+import NavCart from "./navigation/NavCart";
+import NavLogin from "./navigation/NavLogin";
+
+
 
 function Header() {
     return (
@@ -30,7 +32,8 @@ function Header() {
                 <div className="headerBox">
                     <div className="headerBox__userLinks">
                         <NavCart/>
-                        <NavSignIn/>
+                        <NavLogin/>
+                        {/* NavCart and NavLInk go here*/}
                     </div>
                 </div>
             </header>
