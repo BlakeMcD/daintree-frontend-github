@@ -10,16 +10,16 @@ function Header() {
             <header>
                 <div className="headerBox"> 
                     <div className="headerBox__navIcon">
-                        <NavLink text={"COLLECTION"}/>
+                        <NavLink text={"COLLECTION"} linkTo={"./collection"}/>
                     </div>
                     <div className="headerBox__navIcon">
-                        <NavLink text={"STORES"}/>
+                        <NavLink text={"STORES"} linkTo={"./stores"}/>
                     </div>
                     <div className="headerBox__navIcon">
-                        <NavLink text={"MEN"}/>
+                        <NavLink text={"MEN"} linkTo={"./men"}/>
                     </div>
                     <div className="headerBox__navIcon">
-                        <NavLink text={"WOMEN"}/>
+                        <NavLink text={"WOMEN"} linkTo={"./women"}/>
                     </div>
                 </div>
                 <div className="headerBox">
