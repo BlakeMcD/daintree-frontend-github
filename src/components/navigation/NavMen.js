@@ -6,7 +6,9 @@ import Footer from '../Footer'
 function NavMen() {
     return (
         <>
-            
+            <Header/>
+
+            <Footer/>
         </>
     )
 }

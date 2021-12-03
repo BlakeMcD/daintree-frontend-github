@@ -6,7 +6,9 @@ import Footer from '../Footer'
 function NavWomen() {
     return (
         <>
-            
+            <Header/>
+
+            <Footer/>
         </>
     )
 }
