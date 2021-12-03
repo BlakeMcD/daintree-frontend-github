@@ -1,21 +1,55 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
-import { useSelector, useDispatch } from 'react-redux'
-import { increment } from '../actions/actionCreator'
+import LogoSquareLarge from '../LogoSquareLarge';
 
 
 function NavStores() {
 
-    const count = useSelector(state => state.count)
+    const url = 'http://localhost:3000/api/v1/stores'
 
-    const dispatch = useDispatch()
+    const [brands, setBrands] = useState([]);
+
+    useEffect( async() => {
+        //fetch data
+        const response = await fetch(url);
+        const data = await response.json();
+
+        //send data to state
+        setBrands(data)
+    }, [])
+
+    const renderBrands = () => {
+        if (brands.length === 0) {
+            return (
+                <p>Brands Loading</p>
+            )
+        }
+        else {
+            console.log(brands)
+            return (
+                <div className="brandsContainer">
+                    {
+                        brands.map( (brand) => {
+                            return (
+                                <>
+                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name}/>
+                                </>
+                            )
+                        })
+                    }
+                </div>  
+            )
+        }
+    }
 
     return (
         <>
-                <button onClick={() => dispatch(increment())}>Increment Count</button>
-                <p>Count: {count}</p>
-            
+            <Header/>
+            <div className="spacer"/>
+            {renderBrands()}
+            <div className="spacer"/>
+            <Footer/>
         </>
     )
 }
