@@ -9,21 +9,23 @@ import BagWhite from '../images/BagWhite.png'
 function Footer() {
     return (
         <footer>
-            <div className="footerContainer">
-                <img className="footerContainer__icon" src={DeliveryWhite} alt="Free Delivery"/>
-                <p className="footerContainer__text">FREE DELIVERY</p>
-            </div>
-            <div className="footerContainer">
-                <img className="footerContainer__icon" src={CreditCardWhite} alt="Buy Now Pay Later"/>
-                <p className="footerContainer__text">BUY NOW PAY LATER</p>
-            </div>
-            <div className="footerContainer">
-                <img className="footerContainer__icon" src={BoomerangWhite} alt="Free Returns"/>
-                <p className="footerContainer__text">FREE RETURNS</p>
-            </div>
-            <div className="footerContainer">
-                <img className="footerContainer__icon" src={BagWhite} alt="Click and Collect"/>
-                <p className="footerContainer__text">CLICK & COLLECT</p>
+            <div className="footerTopLevel">
+                <div className="footerContainer">
+                    <img className="footerContainer__icon" src={DeliveryWhite} alt="Free Delivery"/>
+                    <p className="footerContainer__text">FREE DELIVERY</p>
+                </div>
+                <div className="footerContainer">
+                    <img className="footerContainer__icon" src={CreditCardWhite} alt="Buy Now Pay Later"/>
+                    <p className="footerContainer__text">BUY NOW PAY LATER</p>
+                </div>
+                <div className="footerContainer">
+                    <img className="footerContainer__icon" src={BoomerangWhite} alt="Free Returns"/>
+                    <p className="footerContainer__text">FREE RETURNS</p>
+                </div>
+                <div className="footerContainer">
+                    <img className="footerContainer__icon" src={BagWhite} alt="Click and Collect"/>
+                    <p className="footerContainer__text">CLICK & COLLECT</p>
+                </div>
             </div>
         </footer>
     )

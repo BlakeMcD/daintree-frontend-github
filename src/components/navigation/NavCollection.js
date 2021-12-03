@@ -31,7 +31,6 @@ function NavCollection() {
                         products.map( (product) => {
                             return (
                                 <>
-                                    <p>item should go here</p>
                                     <ItemContainer
                                         key={product.id}
                                         prod_name={product.name}
@@ -48,7 +47,9 @@ function NavCollection() {
     return (
         <>
             <Header/>
+            <div className="spacer"/>
             {renderProducts()}
+            <div className="spacer"/>
             <Footer/>
         </>
     )

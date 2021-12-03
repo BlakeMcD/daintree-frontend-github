@@ -5,3 +5,16 @@ LIGHT GREY = #bababa
 LLIGHTEST GREY = #e8e8e8
 WHITE = #ffffff
 FADED GOLD = #F0EACE
+
+
+return products.map( (product) => {
+                return (
+                <div>
+                    <p>item should go here</p>
+                    <ItemContainer
+                        key={product.id}
+                        prod_name={product.name}
+                    />
+                </div>
+                )
+            })

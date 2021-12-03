@@ -149,7 +149,12 @@ header {
 
 
 /* FOOTER */
+
 footer {
+  display: block; 
+}
+
+.footerTopLevel {
   display: flex;
   background-color: #191919;
   color: white;
@@ -206,7 +211,10 @@ footer {
 .item {
   width: 300px;
   text-align: center;
-  /* background-color: lightgrey; */
+  display: inline-block;
+  float: left;
+  border: 2px solid black;
+  margin: 40px 20px 0px 20px;
 }
 
 .item__images {
@@ -245,7 +253,15 @@ footer {
 /* COLLECTION */
 .collectionContainer {
   margin: 0px 10% 0px 10%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  /* display: flex; */
+}
+
+.collectionContainer:after {
+  content:"";
+  display: block;
+  clear: both;
+}
+
+.collectionContainer::after {
+  clear: both;
 }
