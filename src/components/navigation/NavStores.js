@@ -13,7 +13,7 @@ function NavStores() {
 
     return (
         <>
-                <button onClick={() => dispatch(increment)}>Increment Count</button>
+                <button onClick={() => dispatch(increment())}>Increment Count</button>
                 <p>Count: {count}</p>
             
         </>

@@ -4,8 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import countReducer from './reducers/countReducer';
 
 //REDUCER
@@ -15,7 +16,11 @@ const rootReducer = combineReducers({
 
 //STORE
 const store = createStore(
-  rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer, 
+  compose(
+    applyMiddleware(thunk), 
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 );
 
 
