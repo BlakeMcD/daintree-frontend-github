@@ -241,3 +241,11 @@ footer {
   justify-content: space-around;
   align-items: center;
 }
+
+/* COLLECTION */
+.collectionContainer {
+  margin: 0px 10% 0px 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
