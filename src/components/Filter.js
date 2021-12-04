@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 
-function Filter( {sendCategoryToParent} ) {
+function Filter( {sendCategoryToParent, sendGenderToParent, sendButtonSubmitToParent} ) {
     //USESTATES
-    const [subcategory, setSubcategory] = useState("blank")
-    const [gender, setGender] = useState("blank")
+    const [subcategory, setSubcategory] = useState("blonk")
+    const [gender, setGender] = useState("blonk")
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(subcategory)
-        console.log(gender)
+        console.log("handleSubmit runs")
+        {sendButtonSubmitToParent()}
+    
     }
 
     return (
@@ -21,15 +22,15 @@ function Filter( {sendCategoryToParent} ) {
                     <select onChange={(event) => {sendCategoryToParent(event.target.value)}}>
                         <option selected value="blank"></option>
                         <option value="jeans">Jeans</option>
-                        <option value="shirts">Shirts</option>
-                        <option value="jackets">Jackets</option>
+                        <option value="shirt">Shirts</option>
+                        <option value="jacket">Jackets</option>
                     </select>
                 </label>
                 <br/>
                 <br/>
                 <label> Gender
                     <br/>
-                    <select onChange={(event) => setGender(event.target.value)}>
+                    <select onChange={(event) => {sendGenderToParent(event.target.value)}}>
                         <option selected value="blank"></option>
                         <option value="men">M</option>
                         <option value="women">F</option>

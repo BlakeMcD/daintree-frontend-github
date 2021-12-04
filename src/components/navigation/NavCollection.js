@@ -12,10 +12,50 @@ function NavCollection() {
     const [subcat, setSubcat] = useState("blank")
     const [gen, setGen] = useState("blank")
 
+    // VARIABLES
+    let filteredProductsCategory = "blank"
+
+    let filteredProducts = products;
+
     //FUNCTIONS
+
+    const filterTheProducts = () => {
+        let catFilter = "meh"
+        let genFilter = "meh"
+
+        if (subcat.event === "blank") {
+            catFilter = products
+        }
+        else {
+            console.log(subcat)
+            catFilter = products.filter(product => product.sub_category == subcat.event)
+        }
+
+        if (gen === "blank") {
+            genFilter = catFilter
+        }
+        else {
+            genFilter = catFilter.filter(product => product.gender === "f")
+        }
+
+        filteredProducts = genFilter
+        return filteredProducts
+
+    }
+
     const sendCategoryToParent = (event) => {
-        console.log(subcat)
+        // console.log(subcat)
         setSubcat({event})
+    }
+
+    const sendGenderToParent = (event) => {
+        // console.log(subcat)
+        setGen({event})
+    }
+
+    const sendButtonSubmitToParent = () => {
+        console.log(subcat)
+        console.log("sendButtonSubmitToParent Runs")
     }
 
     //PRODUCT API REQUEST
@@ -30,9 +70,6 @@ function NavCollection() {
         setProducts(data)
     }, [])
 
-    //FILTER PRODUCTS
-    const filteredProducts = products.filter(product => product.sub_category === "jeans")
-
     // RENDER PRODUCTS
     const renderProducts = () => {
         if (products.length === 0) {
@@ -43,17 +80,23 @@ function NavCollection() {
         else {
 
             //the filter chain
-            // const filteredProductsStore = products.filter(product => product.store.name === "Patagonia") 
-            const filteredProductsCategory = products.filter(product => product.sub_category === "jeans")
+            // const filteredProductsStore = products.filter(product => product.store.name === "Patagonia")
+
+            filteredProductsCategory === "blank" ? (filteredProductsCategory = products) : filteredProductsCategory = products.filter(product => product.sub_category === "subcat")
+            
+            // const filteredProductsCategory = products.filter(product => product.sub_category === "jeans")
+            
             const filteredProductsGender = filteredProductsCategory.filter(product => product.gender === "m")
             const filteredProductsSize = filteredProductsGender.filter(product => product.stocks[0].size === "m")
+
+            filterTheProducts();
 
 
             return (
                 <div className="collectionContainer">
                     {
                 
-                        filteredProductsSize.map( (product) => {
+                        filterTheProducts().map( (product) => {
                             return (
                                 <>
                                     <ItemContainer
@@ -79,7 +122,7 @@ function NavCollection() {
             <div className="spacer"/>
             <div className ="filterAndContainer">
                 <div className="filter">
-                    <Filter sendCategoryToParent={sendCategoryToParent}/>
+                    <Filter sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendButtonSubmitToParent={sendButtonSubmitToParent}/>
                 </div>
                 {renderProducts()}
             </div>

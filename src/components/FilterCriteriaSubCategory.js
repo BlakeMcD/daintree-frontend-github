@@ -1,27 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 function FilterCriteriaSubCategory() {
 
     //USESTATES
     const [subcategory, setSubcategory] = useState("blank")
     const [gender, setGender] = useState("blank")
-
-    // useEffect(() => {
-    //     console.log({subcategory})
-    // }, [gender])
-
-    //SUBMISSIONS
-    // const handleSubmitSubCategory = (event) => {
-    //     setSubcategory(event.target.value)
-    //     alert({subcategory})
-    //     console.log({subcategory}.to_string)
-    // }
-
-    // const handleSubmitGender = (event) => {
-    //     alert({gender})
-    //     console.log({gender})
-    //     console.log("SUBCATEGORY:"+{subcategory}.to_string)
-    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
