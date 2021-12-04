@@ -12,6 +12,7 @@ import countReducer from './reducers/countReducer';
 //REDUCER
 const rootReducer = combineReducers({
   count: countReducer
+  
 })
 
 //STORE

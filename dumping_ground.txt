@@ -27,3 +27,35 @@ CODE I USED FOR THE SUCCESSFUL STORE COUNT BUTTON
     }
 
     export default NavStores
+
+    CODE I USED FOR RENDERING OF ITEMS FROM API - CODE FROM NAVCOLLECTION.JS
+    // RENDER PRODUCTS
+    const renderProducts = () => {
+        if (products.length === 0) {
+            return (
+                <p>Products Loading</p>
+            )
+        }
+        else {
+            return (
+                <div className="collectionContainer">
+                    {
+                        products.map( (product) => {
+                            return (
+                                <>
+                                    <ItemContainer
+                                        key={product.id}
+                                        prod_name={product.name}
+                                        prod_price={product.price_cents}
+                                        prod_stocks={product.stocks}
+                                        prod_images={product.images}
+                                        prod_store_logo={product.store.logo_url_square}
+                                    />
+                                </>
+                            )
+                        })
+                    }
+                </div>  
+            )
+        }
+    }
