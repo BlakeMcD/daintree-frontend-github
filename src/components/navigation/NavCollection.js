@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import ItemContainer from '../ItemContainer' 
+import FilterContainer from '../FilterContainer'
 
 function NavCollection() {
 
@@ -30,10 +31,14 @@ function NavCollection() {
             )
         }
         else {
-            const filteredProductsStore = products.filter(product => product.store.name === "")
-            const filteredProductsCategory = filteredProductsStore.filter(product => product.sub_category === "jeans")
+
+            //the filter chain
+            // const filteredProductsStore = products.filter(product => product.store.name === "Patagonia") 
+            const filteredProductsCategory = products.filter(product => product.sub_category === "jeans")
             const filteredProductsGender = filteredProductsCategory.filter(product => product.gender === "m")
             const filteredProductsSize = filteredProductsGender.filter(product => product.stocks[0].size === "m")
+
+
             return (
                 <div className="collectionContainer">
                     {
@@ -62,7 +67,10 @@ function NavCollection() {
         <>
             <Header/>
             <div className="spacer"/>
-            {renderProducts()}
+            <div className ="filterAndContainer">
+                <FilterContainer/>
+                {renderProducts()}
+            </div>
             <div className="spacer"/>
             <Footer/>
         </>

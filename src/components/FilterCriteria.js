@@ -2,9 +2,10 @@ import React from 'react'
 
 function FilterCriteria() {
     return (
-        <div>
-            
-        </div>
+        <>
+            <p>Filter Criteria</p>
+           
+        </>
     )
 }
 
