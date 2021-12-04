@@ -27,5 +27,3 @@ CODE I USED FOR THE SUCCESSFUL STORE COUNT BUTTON
     }
 
     export default NavStores
-
-test

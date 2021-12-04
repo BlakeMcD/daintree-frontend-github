@@ -5,19 +5,21 @@ import ItemContainer from '../ItemContainer'
 
 function NavCollection() {
 
-    const url = 'http://localhost:3000/api/v1/products'
+    //PRODUCT API REQUEST
+    const url_products = 'http://localhost:3000/api/v1/products'
 
     const [products, setProducts] = useState([]);
 
     useEffect( async() => {
         //fetch data
-        const response = await fetch(url);
+        const response = await fetch(url_products);
         const data = await response.json();
 
         //send data to state
         setProducts(data)
     }, [])
 
+    // RENDER PRODUCTS
     const renderProducts = () => {
         if (products.length === 0) {
             return (
