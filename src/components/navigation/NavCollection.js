@@ -22,10 +22,6 @@ function NavCollection() {
     //FILTER PRODUCTS
     const filteredProducts = products.filter(product => product.sub_category === "jeans")
 
-            // return (
-            //     <p>Products Loading</p>
-            // )
-
     // RENDER PRODUCTS
     const renderProducts = () => {
         if (products.length === 0) {
@@ -34,12 +30,15 @@ function NavCollection() {
             )
         }
         else {
-            const filteredProducts = products.filter(product => product.sub_category === "jeans")
+            const filteredProductsStore = products.filter(product => product.store_id === 3)
+            const filteredProductsCategory = filteredProductsStore.filter(product => product.sub_category === "jeans")
+            const filteredProductsGender = filteredProductsCategory.filter(product => product.gender === "m")
+            const filteredProductsSize = filteredProductsGender.filter(product => product.stocks[0].size === "m")
             return (
                 <div className="collectionContainer">
                     {
                 
-                        filteredProducts.map( (product) => {
+                        filteredProductsSize.map( (product) => {
                             return (
                                 <>
                                     <ItemContainer
