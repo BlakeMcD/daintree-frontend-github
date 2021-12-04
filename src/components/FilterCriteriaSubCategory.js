@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 function FilterCriteriaSubCategory() {
 
-    const handleSubmitSubCategory = (event) => {
-        alert("Sceebly Sceebs")
-        console.log("Sceebly Sceebs")
-        event.preventDefault();
-    }
+    //USESTATES
+    const [subcategory, setSubcategory] = useState("blank")
+    const [gender, setGender] = useState("blank")
 
-    const handleSubmitGender = (event) => {
-        alert("Geebly Geebs")
-        console.log("Geebly Geebs")
-        event.preventDefault();
-    }
+    // useEffect(() => {
+    //     console.log({subcategory})
+    // }, [gender])
+
+    //SUBMISSIONS
+    // const handleSubmitSubCategory = (event) => {
+    //     setSubcategory(event.target.value)
+    //     alert({subcategory})
+    //     console.log({subcategory}.to_string)
+    // }
+
+    // const handleSubmitGender = (event) => {
+    //     alert({gender})
+    //     console.log({gender})
+    //     console.log("SUBCATEGORY:"+{subcategory}.to_string)
+    // }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert("Feeebly Feeebs")
-        console.log("Feeebly Feeebs")
-        
+        console.log(subcategory)
+        console.log(gender)
     }
 
     return (
@@ -27,7 +35,7 @@ function FilterCriteriaSubCategory() {
             <form id="filter_criteria" onSubmit={handleSubmit}>
                 <label> Subcategory
                     <br/>
-                    <select onChange={handleSubmitSubCategory}>
+                    <select onChange={(event) => setSubcategory(event.target.value)}>
                         <option selected value="blank"></option>
                         <option value="jeans">Jeans</option>
                         <option value="shirts">Shirts</option>
@@ -38,7 +46,7 @@ function FilterCriteriaSubCategory() {
                 <br/>
                 <label> Gender
                     <br/>
-                    <select onChange={handleSubmitGender}>
+                    <select onChange={(event) => setGender(event.target.value)}>
                         <option selected value="blank"></option>
                         <option value="men">M</option>
                         <option value="women">F</option>
