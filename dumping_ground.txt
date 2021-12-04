@@ -5,3 +5,27 @@ LIGHT GREY = #bababa
 LLIGHTEST GREY = #e8e8e8
 WHITE = #ffffff
 FADED GOLD = #F0EACE
+
+CODE I USED FOR THE SUCCESSFUL STORE COUNT BUTTON
+    import { useSelector, useDispatch } from 'react-redux'
+    import { increment } from '../actions/actionCreator'
+
+
+    function NavStores() {
+
+        const count = useSelector(state => state.count)
+
+        const dispatch = useDispatch()
+
+        return (
+            <>
+                    <button onClick={() => dispatch(increment())}>Increment Count</button>
+                    <p>Count: {count}</p>
+                
+            </>
+        )
+    }
+
+    export default NavStores
+
+test
