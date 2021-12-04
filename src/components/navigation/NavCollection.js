@@ -9,8 +9,10 @@ function NavCollection() {
 
     // STATES
     const [products, setProducts] = useState([]);
-    const [subcat, setSubcat] = useState("blank")
-    const [gen, setGen] = useState("blank")
+    const [subcat, setSubcat] = useState("blank");
+    const [gen, setGen] = useState("blank");
+    const [sto, setSto] = useState("blank");
+    const [siz, setSiz] = useState("blank");
 
     // VARIABLES
     let filteredProducts = products;
@@ -20,37 +22,55 @@ function NavCollection() {
     const filterTheProducts = () => {
         let catFilter = "empty"
         let genFilter = "empty"
+        let stoFilter = "empty"
+        let sizFilter = "empty"
 
-        if (subcat.event === "blank") {
+        //category
+        if (subcat.event === "blank" || subcat === "blank") {
             catFilter = products
-            console.log("line 26 ran")
-        }
-        else if (subcat === "blank") {
-            catFilter = products
-            console.log("line 30 ran")
-        }
+            console.log("line 31 ran")
+        }  
         else {
             console.log(subcat)
             catFilter = products.filter(product => product.sub_category == subcat.event)
-            console.log("line 35 ran")
+            console.log("line 36 ran")
         }
-
-        if (gen.event === "blank") {
+        //gender
+        if (gen.event === "blank" || gen === "blank") {
             genFilter = catFilter
-            console.log("line 40 ran")
-        }
-        else if (gen === "blank") {
-            genFilter = catFilter
-            console.log("line 44 ran")
+            console.log("line 41 ran")
         }
         else {
             genFilter = catFilter.filter(product => product.gender === gen.event)
-            console.log("line 48 ran")
+            console.log("line 45 ran")
+        }
+        //store
+        if (sto.event === "blank" || sto === "blank") {
+            stoFilter = genFilter
+            console.log("line 50 ran")
+        }
+        else {
+            stoFilter = genFilter.filter(product => product.store.name === sto.event)
+            console.log("line 54 ran")
+        }
+        //siz
+        if (siz.event === "blank" || siz === "blank") {
+            sizFilter = stoFilter
+            console.log("line 50 ran")
+        }
+        else {
+            sizFilter = stoFilter.filter(product => product.stocks[0].size === siz.event)
+            console.log("line 54 ran")
         }
 
-        filteredProducts = genFilter
+        filteredProducts = sizFilter
         return filteredProducts
 
+    }
+
+    const sendStoreToParent = (event) => {
+        // console.log(subcat)
+        setSto({event})
     }
 
     const sendCategoryToParent = (event) => {
@@ -63,9 +83,9 @@ function NavCollection() {
         setGen({event})
     }
 
-    const sendButtonSubmitToParent = () => {
-        console.log(subcat)
-        console.log("sendButtonSubmitToParent Runs")
+    const sendSizeToParent = (event) => {
+        // console.log(subcat)
+        setSiz({event})
     }
 
     //PRODUCT API REQUEST
@@ -120,7 +140,7 @@ function NavCollection() {
             <div className="spacer"/>
             <div className ="filterAndContainer">
                 <div className="filter">
-                    <Filter sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendButtonSubmitToParent={sendButtonSubmitToParent}/>
+                    <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent}/>
                 </div>
                 {renderProducts()}
             </div>

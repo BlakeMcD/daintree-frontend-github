@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Filter( {sendCategoryToParent, sendGenderToParent, sendButtonSubmitToParent} ) {
+function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, sendSizeToParent, sendButtonSubmitToParent} ) {
     //USESTATES
     const [subcategory, setSubcategory] = useState("blonk")
     const [gender, setGender] = useState("blonk")
@@ -16,6 +16,23 @@ function Filter( {sendCategoryToParent, sendGenderToParent, sendButtonSubmitToPa
         <>
             <p>Filter Criteria SubCategory</p>
             <form id="filter_criteria" onSubmit={handleSubmit}>
+                <label> Store
+                    <br/>                 
+                    <select onChange={(event) => {sendStoreToParent(event.target.value)}}>
+                        <option selected value="blank"></option>
+                        <option value="Pact">Pact</option>
+                        <option value="Patagonia">Patagonia</option>
+                        <option value="Quince">Quince</option>
+                        <option value="Reformation">Reformation</option>
+                        <option value="Vetta">Vetta</option>
+                        <option value="Tentree">Tentree</option>
+                        <option value="Boden">Boden</option>
+                        <option value="Summersalt">Summersalt</option>
+                        <option value="Outerknown">Outerknown</option>
+                    </select>
+                </label>
+                <br/>
+                <br/>
                 <label> Subcategory
                     <br/>
                     
@@ -38,7 +55,15 @@ function Filter( {sendCategoryToParent, sendGenderToParent, sendButtonSubmitToPa
                 </label>
                 <br/>
                 <br/>
-                <input type="submit" value="Submit"/>      
+                <label> Size
+                    <br/>
+                    <select onChange={(event) => {sendSizeToParent(event.target.value)}}>
+                        <option selected value="blank"></option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                    </select>
+                </label>
             </form>   
         </>
     )
