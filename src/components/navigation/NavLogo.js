@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function NavLogo() {
     return (
         <>
-            <Link to="./">
+            <Link to="/">
                 <img className="Header_Logo" src={DaintreeLandscapeFinalTan} alt="Daintree Logo homepage link"></img>
             </Link>
         </>

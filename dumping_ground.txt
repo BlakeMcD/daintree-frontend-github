@@ -59,3 +59,12 @@ CODE I USED FOR THE SUCCESSFUL STORE COUNT BUTTON
             )
         }
     }
+
+
+    THE CODE THAT WOULD LEAD TO GOING TO A SUBPAGE AFTER CLICKING ON A LINK
+    <div className="headerBox__navIcon">
+                        <NavLink text={"MEN"} linkTo={"./men"}/>
+                    </div>
+                    <div className="headerBox__navIcon">
+                        <NavLink text={"WOMEN"} linkTo={"./women"}/>
+                    </div>

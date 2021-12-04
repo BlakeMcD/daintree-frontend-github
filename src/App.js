@@ -11,7 +11,7 @@ import { Routes, Route, Link } from "react-router-dom"
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home/>} />
+      <Route exact path="/" element={<Home/>} />
       <Route path="collection" element={<NavCollection/>} />
       <Route path="stores" element={<NavStores/>} />
       <Route path="men" element={<NavMen/>} />

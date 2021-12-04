@@ -4,7 +4,7 @@ import ShoppingCartWhite from '../../images/ShoppingCartWhite.png'
 
 function NavCart() {
     return (
-        <Link to={"./cart"}>
+        <Link to={"/cart"}>
             <img src={ShoppingCartWhite} alt="Sign In"></img>
         </Link>
     )

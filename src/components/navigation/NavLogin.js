@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function NavLogin() {
     return (
-        <Link to={"./login"}>
+        <Link to={"/login"}>
             <img src={UserSigninWhite} alt="Sign In"></img>
         </Link>
     )
