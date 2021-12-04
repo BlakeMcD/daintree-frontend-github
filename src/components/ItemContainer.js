@@ -6,11 +6,12 @@ function ItemContainer(props) {
         <div className="item">
 
             <div className="item__images">
-                <img className="item__images__itemImage" src="https://connor.imgix.net/Connor/Products/C18DE105_DEN_1.png" alt="Item Image"/>
-                <img className="item__images__itemStoreLogo" src="https://schimiggy.com/wp-content/uploads/2020/04/pact-apparel-logo-square.jpg"  alt="Store Logo"/>
+                <img className="item__images__itemImage" src={props.prod_images[0].img_url} alt="Item Image"/>
+                <img className="item__images__itemStoreLogo" src={props.prod_store_logo}  alt="Store Logo"/>
             </div>
             <p className="item__title">{props.prod_name}</p>
-            <p className="item__price">Item Price</p>
+            <p className="item__price">{props.prod_price}</p>
+            <p className="item__stocks">{props.prod_stocks[0].size}</p>
             <AddToCart/> 
         </div>
     )
