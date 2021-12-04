@@ -2,14 +2,24 @@ import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import ItemContainer from '../ItemContainer' 
-import FilterContainer from '../FilterContainer'
+import Filter from '../Filter'
 
 function NavCollection() {
 
+
+    // STATES
+    const [products, setProducts] = useState([]);
+    const [subcat, setSubcat] = useState("blank")
+    const [gen, setGen] = useState("blank")
+
+    //FUNCTIONS
+    const sendCategoryToParent = (event) => {
+        console.log(subcat)
+        setSubcat({event})
+    }
+
     //PRODUCT API REQUEST
     const url_products = 'http://localhost:3000/api/v1/products'
-
-    const [products, setProducts] = useState([]);
 
     useEffect( async() => {
         //fetch data
@@ -68,7 +78,9 @@ function NavCollection() {
             <Header/>
             <div className="spacer"/>
             <div className ="filterAndContainer">
-                <FilterContainer/>
+                <div className="filter">
+                    <Filter sendCategoryToParent={sendCategoryToParent}/>
+                </div>
                 {renderProducts()}
             </div>
             <div className="spacer"/>
