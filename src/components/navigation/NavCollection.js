@@ -19,6 +19,13 @@ function NavCollection() {
         setProducts(data)
     }, [])
 
+    //FILTER PRODUCTS
+    const filteredProducts = products.filter(product => product.sub_category === "jeans")
+
+            // return (
+            //     <p>Products Loading</p>
+            // )
+
     // RENDER PRODUCTS
     const renderProducts = () => {
         if (products.length === 0) {
@@ -27,10 +34,12 @@ function NavCollection() {
             )
         }
         else {
+            const filteredProducts = products.filter(product => product.sub_category === "jeans")
             return (
                 <div className="collectionContainer">
                     {
-                        products.map( (product) => {
+                
+                        filteredProducts.map( (product) => {
                             return (
                                 <>
                                     <ItemContainer
