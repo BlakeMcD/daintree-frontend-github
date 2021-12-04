@@ -32,8 +32,8 @@ function Filter( {sendCategoryToParent, sendGenderToParent, sendButtonSubmitToPa
                     <br/>
                     <select onChange={(event) => {sendGenderToParent(event.target.value)}}>
                         <option selected value="blank"></option>
-                        <option value="men">M</option>
-                        <option value="women">F</option>
+                        <option value="m">M</option>
+                        <option value="f">F</option>
                     </select>
                 </label>
                 <br/>

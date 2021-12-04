@@ -13,29 +13,39 @@ function NavCollection() {
     const [gen, setGen] = useState("blank")
 
     // VARIABLES
-    let filteredProductsCategory = "blank"
-
     let filteredProducts = products;
 
     //FUNCTIONS
 
     const filterTheProducts = () => {
-        let catFilter = "meh"
-        let genFilter = "meh"
+        let catFilter = "empty"
+        let genFilter = "empty"
 
         if (subcat.event === "blank") {
             catFilter = products
+            console.log("line 26 ran")
+        }
+        else if (subcat === "blank") {
+            catFilter = products
+            console.log("line 30 ran")
         }
         else {
             console.log(subcat)
             catFilter = products.filter(product => product.sub_category == subcat.event)
+            console.log("line 35 ran")
         }
 
-        if (gen === "blank") {
+        if (gen.event === "blank") {
             genFilter = catFilter
+            console.log("line 40 ran")
+        }
+        else if (gen === "blank") {
+            genFilter = catFilter
+            console.log("line 44 ran")
         }
         else {
-            genFilter = catFilter.filter(product => product.gender === "f")
+            genFilter = catFilter.filter(product => product.gender === gen.event)
+            console.log("line 48 ran")
         }
 
         filteredProducts = genFilter
@@ -79,23 +89,11 @@ function NavCollection() {
         }
         else {
 
-            //the filter chain
-            // const filteredProductsStore = products.filter(product => product.store.name === "Patagonia")
-
-            filteredProductsCategory === "blank" ? (filteredProductsCategory = products) : filteredProductsCategory = products.filter(product => product.sub_category === "subcat")
-            
-            // const filteredProductsCategory = products.filter(product => product.sub_category === "jeans")
-            
-            const filteredProductsGender = filteredProductsCategory.filter(product => product.gender === "m")
-            const filteredProductsSize = filteredProductsGender.filter(product => product.stocks[0].size === "m")
-
             filterTheProducts();
-
-
+        
             return (
                 <div className="collectionContainer">
                     {
-                
                         filterTheProducts().map( (product) => {
                             return (
                                 <>
