@@ -36,6 +36,10 @@ function NavCollection() {
                                     <ItemContainer
                                         key={product.id}
                                         prod_name={product.name}
+                                        prod_price={product.price_cents}
+                                        prod_stocks={product.stocks}
+                                        prod_images={product.images}
+                                        prod_store_logo={product.store.logo_url_square}
                                     />
                                 </>
                             )
