@@ -30,7 +30,7 @@ function NavCollection() {
             )
         }
         else {
-            const filteredProductsStore = products.filter(product => product.store_id === 3)
+            const filteredProductsStore = products.filter(product => product.store.name === "")
             const filteredProductsCategory = filteredProductsStore.filter(product => product.sub_category === "jeans")
             const filteredProductsGender = filteredProductsCategory.filter(product => product.gender === "m")
             const filteredProductsSize = filteredProductsGender.filter(product => product.stocks[0].size === "m")
