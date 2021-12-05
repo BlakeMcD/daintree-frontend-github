@@ -138,7 +138,7 @@ header {
 .headerBox__navIcon a {
   color: white;
   text-decoration: none;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
 }
 
 .headerBox__navIcon a:hover {

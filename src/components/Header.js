@@ -1,5 +1,4 @@
 import React from 'react'
-import NavLink from "./navigation/NavLink";
 import NavLogo from "./navigation/NavLogo";
 import NavCart from "./navigation/NavCart";
 import NavLogin from "./navigation/NavLogin";
@@ -13,19 +12,15 @@ function Header() {
             <header>
                 <div className="headerBox"> 
                     <div className="headerBox__navIcon">
-                        {/* <NavLink text={"COLLECTION"} linkTo={"./collection"}/> */}
                         <Link to="/collection">COLLECTION</Link>
                     </div>
                     <div className="headerBox__navIcon">
-                        {/* <NavLink text={"STORES"} linkTo={"./stores"}/> */}
                         <Link to="/stores">STORES</Link>
                     </div>
                     <div className="headerBox__navIcon">
-                        {/* <NavLink text={"MEN"} linkTo={"./men"}/> */}
                         <Link to="/men">MEN</Link>
                     </div>
                     <div className="headerBox__navIcon">
-                        {/* <NavLink text={"WOMEN"} linkTo={"./women"}/> */}
                         <Link to="/women">WOMEN</Link>
                     </div>
                 </div>
@@ -38,7 +33,6 @@ function Header() {
                     <div className="headerBox__userLinks">
                         <NavCart/>
                         <NavLogin/>
-                        {/* NavCart and NavLInk go here*/}
                     </div>
                 </div>
             </header>
