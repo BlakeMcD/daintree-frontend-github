@@ -53,7 +53,7 @@ function NavCollection() {
             stoFilter = genFilter.filter(product => product.store.name === sto.event)
             console.log("line 54 ran")
         }
-        //siz
+        //size
         if (siz.event === "blank" || siz === "blank") {
             sizFilter = stoFilter
             console.log("line 50 ran")
@@ -68,23 +68,17 @@ function NavCollection() {
 
     }
 
+    //Callback Functions passed down as props
     const sendStoreToParent = (event) => {
-        // console.log(subcat)
         setSto({event})
     }
-
     const sendCategoryToParent = (event) => {
-        // console.log(subcat)
         setSubcat({event})
     }
-
     const sendGenderToParent = (event) => {
-        // console.log(subcat)
         setGen({event})
     }
-
     const sendSizeToParent = (event) => {
-        // console.log(subcat)
         setSiz({event})
     }
 
