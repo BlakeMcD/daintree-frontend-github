@@ -8,18 +8,20 @@ function NavLogin() {
     const [img, setImg] = useState(UserSigninWhite)
 
     return (
-        <Link to={"/login"}>
-            <img 
-                alt="Sign In"
-                src={img} 
-                onMouseEnter={() => {
-                    setImg(UserSigninTan)
-                }}
-                onMouseOut={() => {
-                    setImg(UserSigninWhite)
-                }}
-            ></img>
-        </Link>
+        <>
+            <Link to={"/login"}>
+                <img 
+                    alt="Sign In"
+                    src={img} 
+                    onMouseEnter={() => {
+                        setImg(UserSigninTan)
+                    }}
+                    onMouseOut={() => {
+                        setImg(UserSigninWhite)
+                    }}
+                ></img>
+            </Link>
+        </>
     )
 }
 
