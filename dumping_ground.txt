@@ -68,3 +68,10 @@ CODE I USED FOR THE SUCCESSFUL STORE COUNT BUTTON
                     <div className="headerBox__navIcon">
                         <NavLink text={"WOMEN"} linkTo={"./women"}/>
                     </div>
+
+
+ETHICAL STORE DETAILS
+Name: ADAY
+Description: Designed to be seasonless and with a focus on ease-of-wear (hello, wrinkle-free fabrics), ADAY’s pieces are sure to live a long life in your closet.
+Logo URL Square: https://scontent.fmel10-1.fna.fbcdn.net/v/t1.18169-9/15219601_710618665762585_8491969803489385657_n.png?_nc_cat=109&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=xLuvdzLP_2gAX_laQl6&_nc_ht=scontent.fmel10-1.fna&oh=40a221c198f51a9a047d981237a1884c&oe=61D493A6
+Logo URL Landscape: https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/v1426453123/lkewst0dfp5tjljrhqou.png

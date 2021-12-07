@@ -25,9 +25,39 @@ function NavStoresCreate() {
     }
 
     const handleSubmit = (event) => {
-            event.preventDefault();
 
-            alert("All good so far!")
+        event.preventDefault();
+
+        console.log("All good so far!")
+
+        const posturl = 'http://localhost:3000/api/v1/stores/create';
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json', 
+                accept: 'application/json'
+                }, 
+            body: JSON.stringify({ 
+                store: {
+                    name:storeName,
+                    description:storeDescription,
+                    logo_url_square:storeUrlSquare,
+                    logo_url_landscape:storeUrlLandscape
+                }
+            })
+        };
+
+        //(:name, :description, :logo_url_square, :logo_url_landscape)
+
+        fetch(posturl, requestOptions)
+            .then(response => response.json())
+            .then(
+                data => {
+                 console.log(data)
+                //  localStorage.setItem("jwt", data.jwt)
+                }
+            )
     }
 
     return (
