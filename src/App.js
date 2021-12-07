@@ -6,6 +6,7 @@ import NavMen from './components/navigation/NavMen';
 import NavWomen from './components/navigation/NavWomen';
 import NavCartContent from './components/navigation/NavCartContent';
 import NavLoginContent from './components/navigation/NavLoginContent';
+import NavStoresCreate from './components/navigation/NavStoresCreate';
 
 import { Routes, Route, Link } from "react-router-dom"
 
@@ -19,6 +20,7 @@ function App() {
       <Route path="women" element={<NavWomen/>} />
       <Route path="cart" element={<NavCartContent/>} />
       <Route path="login" element={<NavLoginContent/>} />
+      <Route path="stores/create" element={<NavStoresCreate/>} />
   
      
     </Routes>
