@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
+import Auth0LoginButton from '../Auth0LoginButton'
+import Auth0LogoutButton from '../Auth0LogoutButton'
+import Auth0Profile from '../Auth0Profile'
 
 function NavLoginContent() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
-    //test
-    const [dadata, setDadata] = useState(["blank"])
 
     const handleChangeEmail = (event) => {
         setEmail(event.target.value)
@@ -16,31 +16,6 @@ function NavLoginContent() {
 
     const handleChangePassword = (event) => {
         setPassword(event.target.value)
-    }
-    
-    const handleSubmitGet = (event) => {
-
-        const posturl2 = 'http://localhost:3000/api/v1/login';
-
-        const requestOptions2 = {
-            method: 'GET', 
-            url: posturl2,
-            headers: { 'Content-Type': 'application/json' }, 
-            body: JSON.stringify({ 
-                user: {
-                    email: {email},
-                    password: {password}
-                }
-            })
-        };
-
-        fetch(posturl2, requestOptions2)
-            .then(response => response.json())
-            .then(data2 => {
-                console.log("did this work??")
-                setDadata(data2)})
-
-        
     }
 
     const handleSubmit = (event) => {
@@ -63,27 +38,20 @@ function NavLoginContent() {
         };
 
         fetch(posturl, requestOptions)
-            .then(response => {
-                return response.json()
-                // console.log("Response:", response)
-            })
+            .then(response => response.json())
             .then(
                 data => {
-                //  setDadata(data)
-                //  alert("It woooooooorked!")
                  console.log(data)
                  localStorage.setItem("jwt", data.jwt)
-                })
-       
+                }
+            )
     }
 
-    
 
     return (
         <>
             <Header/>
             <h1> Nav Login Content Content Page</h1>
-            <h2> Data: {dadata} </h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Email Address:
@@ -95,6 +63,10 @@ function NavLoginContent() {
                 </label>
                 <input type="submit" value="Submit" />
             </form>
+            <h2>Auth0</h2>
+            <Auth0LoginButton/>
+            <Auth0LogoutButton/>
+            <Auth0Profile/>
             <Footer/>
         </>
     )
