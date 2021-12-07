@@ -8,6 +8,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import countReducer from './reducers/countReducer';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 //REDUCER
 const rootReducer = combineReducers({
@@ -28,11 +29,18 @@ const store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <Auth0Provider
+      domain="dev-a3ecq-vy.au.auth0.com"
+      clientId="n46tzzB9RQRV5rYvuSEMLsOjcDMmgT4i"
+      redirectUri="http://localhost:3010/"
+
+    >
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
