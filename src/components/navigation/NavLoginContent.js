@@ -27,8 +27,10 @@ function NavLoginContent() {
             url: posturl2,
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({ 
-                email: {email},
-                password: {password}
+                user: {
+                    email: {email},
+                    password: {password}
+                }
             })
         };
 
@@ -42,25 +44,36 @@ function NavLoginContent() {
     }
 
     const handleSubmit = (event) => {
-        alert('Request sent');
-        // event.preventDefault();
+        event.preventDefault();
 
         const posturl = 'http://localhost:3000/api/v1/login';
 
         const requestOptions = {
             method: 'POST',
-            url: posturl,  
-            headers: { 'Content-Type': 'application/json' }, 
+            headers: { 
+                'Content-Type': 'application/json', 
+                accept: 'application/json'
+                }, 
             body: JSON.stringify({ 
-                email: {email},
-                password: {password}
+                user: {
+                    email,
+                    password
+                }
             })
         };
 
         fetch(posturl, requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                setDadata(data)})
+            .then(response => {
+                return response.json()
+                // console.log("Response:", response)
+            })
+            .then(
+                data => {
+                //  setDadata(data)
+                //  alert("It woooooooorked!")
+                 console.log(data)
+                 localStorage.setItem("jwt", data.jwt)
+                })
        
     }
 
@@ -71,7 +84,7 @@ function NavLoginContent() {
             <Header/>
             <h1> Nav Login Content Content Page</h1>
             <h2> Data: {dadata} </h2>
-            <form onSubmit={handleSubmitGet}>
+            <form onSubmit={handleSubmit}>
                 <label>
                     Email Address:
                     <input type="text" value={email} onChange={handleChangeEmail}/>
