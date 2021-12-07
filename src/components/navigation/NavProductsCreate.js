@@ -4,7 +4,7 @@ import Footer from '../Footer'
 
 
 
-function NavProductCreate() {
+function NavProductsCreate() {
 
     const [productUid, setProductUid] = useState("")
     const [productName, setProductName] = useState("")
