@@ -6,6 +6,7 @@ import Footer from '../Footer'
 
 function NavProductsCreate() {
 
+    //product
     const [productUid, setProductUid] = useState("")
     const [productName, setProductName] = useState("")
     const [productCategory, setProductCategory] = useState("")
@@ -15,7 +16,15 @@ function NavProductsCreate() {
     const [productAgeGroup, setProductAgeGroup] = useState("")
     const [productPriceCents, setProductPriceCents] = useState(0)
     const [productStoreId, setProductStoreId] = useState(0)
+    //product image
+    const [productImageColour, setProductImageColour] = useState("")
+    const [productImageUrl, setProductImageUrl] = useState("")
+    //product stocks
+    const [productStockColour, setProductStockColour] = useState("")
+    const [productStockSize, setProductStockSize] = useState("")
+    const [productStockAmount, setProductStockAmount] = useState(0)
 
+    //product
     const handleChangeUid = (event) => {
         setProductUid(event.target.value)
     }
@@ -43,6 +52,23 @@ function NavProductsCreate() {
     const handleChangeStoreId = (event) => {
         setProductStoreId(event.target.value)
     }
+    //product image
+    const handleChangeImageColour = (event) => {
+        setProductImageColour(event.target.value)
+    }
+    const handleChangeImageUrl = (event) => {
+        setProductImageUrl(event.target.value)
+    }
+    //product stock
+    const handleChangeStockColour = (event) => {
+        setProductStockColour(event.target.value)
+    }
+    const handleChangeStockSize = (event) => {
+        setProductStockSize(event.target.value)
+    }
+    const handleChangeStockAmount = (event) => {
+        setProductStockAmount(event.target.value)
+    }
 
     const handleSubmit = (event) => {
 
@@ -67,7 +93,16 @@ function NavProductsCreate() {
                     description:productDescription, 
                     gender:productGender,
                     age_group:productAgeGroup,
-                    store_id:productStoreId
+                    store_id:productStoreId, 
+
+                    img_colour:productImageColour,
+                    img_url:productImageUrl,
+
+                    stocks:colour:productStockColour,
+                    size:productStockSize,
+                    amount:productStockAmount
+
+                    
                 }
             })
         };
@@ -87,6 +122,7 @@ function NavProductsCreate() {
             <Header/>
             <h1>Add a New Product</h1>
             <form onSubmit={handleSubmit}>
+                <h2>PRODUCT INFO</h2>
                 <label>
                     UID:
                     <input type="text" value={productUid} onChange={handleChangeUid}/>
@@ -123,6 +159,28 @@ function NavProductsCreate() {
                     Store ID:
                     <input type="number" value={productStoreId} onChange={handleChangeStoreId}/>
                 </label>
+                    <h2>PRODUCT IMAGE INFO</h2>
+                    <label>
+                        Product Image Colour:
+                        <input type="text" value={productImageColour} onChange={handleChangeImageColour}/>
+                    </label>
+                    <label>
+                        Image URL:
+                        <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
+                    </label>
+                    <h2>PRODUCT STOCK INFO</h2>
+                    <label>
+                        Stock Colour:
+                        <input type="text" value={productStockColour} onChange={handleChangeStockColour}/>
+                    </label>
+                    <label>
+                        Stock Size:
+                        <input type="text" value={productStockSize} onChange={handleChangeStockSize}/>
+                    </label>
+                    <label>
+                        Stock Amount:
+                        <input type="text" value={productStockAmount} onChange={handleChangeStockAmount}/>
+                    </label>
                 <input type="submit" value="Submit" />
             </form>
             <Footer/>
