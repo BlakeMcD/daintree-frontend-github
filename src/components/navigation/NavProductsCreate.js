@@ -14,15 +14,13 @@ function NavProductsCreate() {
     const [productDescription, setProductDescription] = useState("")
     const [productGender, setProductGender] = useState("")
     const [productAgeGroup, setProductAgeGroup] = useState("")
+    const [productColour, setProductColour] = useState("")
+    const [productSize, setProductSize] = useState("")
+    const [productStock, setProductStock] = useState(0)
     const [productPriceCents, setProductPriceCents] = useState(0)
-    const [productStoreId, setProductStoreId] = useState(0)
-    //product image
-    const [productImageColour, setProductImageColour] = useState("")
     const [productImageUrl, setProductImageUrl] = useState("")
-    //product stocks
-    const [productStockColour, setProductStockColour] = useState("")
-    const [productStockSize, setProductStockSize] = useState("")
-    const [productStockAmount, setProductStockAmount] = useState(0)
+    const [productStoreId, setProductStoreId] = useState(1)
+
 
     //product
     const handleChangeUid = (event) => {
@@ -46,28 +44,23 @@ function NavProductsCreate() {
     const handleChangeAgeGroup = (event) => {
         setProductAgeGroup(event.target.value)
     }
+    const handleChangeColour = (event) => {
+        setProductColour(event.target.value)
+    }
+    const handleChangeSize = (event) => {
+        setProductSize(event.target.value)
+    }
+    const handleChangeStock = (event) => {
+        setProductStock(event.target.value)
+    }
     const handleChangePriceCents = (event) => {
         setProductPriceCents(event.target.value)
-    }
-    const handleChangeStoreId = (event) => {
-        setProductStoreId(event.target.value)
-    }
-    //product image
-    const handleChangeImageColour = (event) => {
-        setProductImageColour(event.target.value)
     }
     const handleChangeImageUrl = (event) => {
         setProductImageUrl(event.target.value)
     }
-    //product stock
-    const handleChangeStockColour = (event) => {
-        setProductStockColour(event.target.value)
-    }
-    const handleChangeStockSize = (event) => {
-        setProductStockSize(event.target.value)
-    }
-    const handleChangeStockAmount = (event) => {
-        setProductStockAmount(event.target.value)
+    const handleChangeStoreId = (event) => {
+        setProductStoreId(event.target.value)
     }
 
     const handleSubmit = (event) => {
@@ -93,22 +86,14 @@ function NavProductsCreate() {
                     description:productDescription, 
                     gender:productGender,
                     age_group:productAgeGroup,
-                    store_id:productStoreId, 
 
-                    images_attributes: [
-                        {
-                        img_colour:productImageColour,
-                        img_url:productImageUrl
-                        }
-                    ],
+                    colour: productColour,
+                    size: productSize, 
+                    stock: parseInt(productStock,10),
+                    price_cents: parseInt(productPriceCents,10),
+                    image_url: productImageUrl,
 
-                    stocks_attributes: [
-                        {
-                        colour:productStockColour,
-                        size:productStockSize,
-                        amount:productStockAmount
-                        }
-                    ]      
+                    store_id:productStoreId     
                 }
             })
         };
@@ -158,35 +143,26 @@ function NavProductsCreate() {
                     <input type="text" value={productAgeGroup} onChange={handleChangeAgeGroup}/>
                 </label>
                 <label>
+                    Colour:
+                    <input type="text" value={productColour} onChange={handleChangeColour}/>
+                </label>
+                <label>
+                    Size:
+                    <input type="text" value={productSize} onChange={handleChangeSize}/>
+                </label>
+                <label>
+                    Stock:
+                    <input type="number" value={productStock} onChange={handleChangeStock}/>
+                </label>
+                <label>
                     Price (in cents):
                     <input type="number" value={productPriceCents} onChange={handleChangePriceCents}/>
                 </label>
                 <label>
-                    Store ID:
-                    <input type="number" value={productStoreId} onChange={handleChangeStoreId}/>
+                    Image URL:
+                    <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
                 </label>
-                    <h2>PRODUCT IMAGE INFO</h2>
-                    <label>
-                        Product Image Colour:
-                        <input type="text" value={productImageColour} onChange={handleChangeImageColour}/>
-                    </label>
-                    <label>
-                        Image URL:
-                        <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
-                    </label>
-                    <h2>PRODUCT STOCK INFO</h2>
-                    <label>
-                        Stock Colour:
-                        <input type="text" value={productStockColour} onChange={handleChangeStockColour}/>
-                    </label>
-                    <label>
-                        Stock Size:
-                        <input type="text" value={productStockSize} onChange={handleChangeStockSize}/>
-                    </label>
-                    <label>
-                        Stock Amount:
-                        <input type="text" value={productStockAmount} onChange={handleChangeStockAmount}/>
-                    </label>
+                
                 <input type="submit" value="Submit" />
             </form>
             <Footer/>
