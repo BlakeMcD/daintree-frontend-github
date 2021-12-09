@@ -59,7 +59,7 @@ function NavCollection() {
             console.log("line 50 ran")
         }
         else {
-            sizFilter = stoFilter.filter(product => product.stocks[0].size === siz.event)
+            sizFilter = stoFilter.filter(product => product.size === siz.event)
             console.log("line 54 ran")
         }
 
@@ -115,8 +115,9 @@ function NavCollection() {
                                         key={product.id}
                                         prod_name={product.name}
                                         prod_price={product.price_cents}
-                                        prod_stocks={product.stocks}
-                                        prod_images={product.images}
+                                        prod_stock={product.stock}
+                                        prod_image={product.image_url}
+                                        prod_size={product.size}
                                         prod_store_logo={product.store.logo_url_square}
                                     />
                                 </>
