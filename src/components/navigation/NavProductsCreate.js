@@ -95,14 +95,20 @@ function NavProductsCreate() {
                     age_group:productAgeGroup,
                     store_id:productStoreId, 
 
-                    img_colour:productImageColour,
-                    img_url:productImageUrl,
+                    images_attributes: [
+                        {
+                        img_colour:productImageColour,
+                        img_url:productImageUrl
+                        }
+                    ],
 
-                    stocks:colour:productStockColour,
-                    size:productStockSize,
-                    amount:productStockAmount
-
-                    
+                    stocks_attributes: [
+                        {
+                        colour:productStockColour,
+                        size:productStockSize,
+                        amount:productStockAmount
+                        }
+                    ]      
                 }
             })
         };
