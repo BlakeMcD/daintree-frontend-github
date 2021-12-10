@@ -8,12 +8,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import countReducer from './reducers/countReducer';
+import cartReducer from './reducers/cartReducer';
 import { Auth0Provider } from "@auth0/auth0-react";
 
 //REDUCER
 const rootReducer = combineReducers({
-  count: countReducer
-  
+  count: countReducer,
+  cart: cartReducer
 })
 
 //STORE
@@ -24,7 +25,6 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
-
 
 
 ReactDOM.render(
