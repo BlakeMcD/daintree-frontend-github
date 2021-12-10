@@ -87,14 +87,31 @@ h2 {
   padding: 15px 32px;
   font-size: 16px;
   border-radius: 8px;
-  transition-duration: 0.5s;
+  /* transition-duration: 0.5s; */
 }
 
 .addToCartButton:hover {
-  background-color: #464646;
-  color: white;
+  /* background-color: #464646; */
+  color: #bababa;
 }
 
+.removeFromCartButton {
+  display: inline-block;
+  margin-top: 5px;
+  text-decoration: none;
+  background-color: #1A1A1A; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  /* transition-duration: 0.5s; */
+}
+
+.removeFromCartButton:hover {
+  /* background-color: #464646; */
+  color: #bababa;
+}
 
 
 /* HEADER */

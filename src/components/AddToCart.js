@@ -48,10 +48,9 @@ function AddToCart(props) {
             <>
                 <a className="addToCartButton" onClick={() => addOrRemove()}>
                     ADD TO CART
-                    {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
+                    {/* {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
                     {cart.length > 0 ? <p>cart has stuff in it </p> : <p>cart is empty</p>}
-                    {checkInCart() ? <p>this is in cart </p> : <p>this is not in cart</p>}
-                    {item.name}
+                    {checkInCart() ? <p>this is in cart </p> : <p>this is not in cart</p>} */}
                 </a>
         </>
         )
@@ -60,12 +59,11 @@ function AddToCart(props) {
     const displayRemove = () => {
         return (
             <>
-                <a className="addToCartButton" onClick={() => addOrRemove()}>
+                <a className="removeFromCartButton" onClick={() => addOrRemove()}>
                     REMOVE FROM CART
-                    {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
+                    {/* {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
                     {cart.length > 0  ? <p>cart has stuff in it </p> : <p>cart is empty</p>}
-                    {checkInCart() ? <p>this is in cart </p> : <p>this is not in cart</p>}
-                    {item.name}
+                    {checkInCart() ? <p>this is in cart </p> : <p>this is not in cart</p>} */}
                 </a>
         </>
         )
