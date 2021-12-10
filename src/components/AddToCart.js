@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { add_to_cart } from './actions/actionCreator'
+import { add_to_cart, remove_from_cart } from './actions/actionCreator'
 
 function AddToCart(props) {
 
@@ -24,17 +24,45 @@ function AddToCart(props) {
         if (add === true) {
 
             setAdd(false)
+            dispatch(add_to_cart(item))
+
         }
         else {
 
             setAdd(true)
+            dispatch(remove_from_cart(item))
         }
     }
 
+    const displayAdd = () => {
+
+        return (
+            <>
+                <a className="addToCartButton" onClick={() => addOrRemove()}>
+                    ADD TO CART
+                </a>
+        </>
+        )
+    }
+
+    const displayRemove = () => {
+        return (
+            <>
+                <a className="addToCartButton" onClick={() => addOrRemove()}>
+                    REMOVE FROM CART
+                </a>
+        </>
+        )
+    }
+
     return (
-        <a className="addToCartButton" onClick={() => dispatch(add_to_cart(item))}>
-            ADD TO CART Addstate:{add}
-        </a>
+        <>
+            {
+                add
+                ? displayAdd()
+                : displayRemove()
+            }
+        </>
     )
 }
 
