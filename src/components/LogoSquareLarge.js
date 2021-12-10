@@ -1,9 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function LogoSquareLarge(props) {
     return (
         <>
-            <img className="logoSquareLarge" src={props.imageSource} alt={props.imageAlt}></img>
+            <NavLink to={`/stores/${props.brandName}`}>
+                <img className="logoSquareLarge" src={props.imageSource} alt={props.imageAlt}></img>
+            </NavLink>
         </>
     )
 }

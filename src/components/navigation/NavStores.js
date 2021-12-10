@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import LogoSquareLarge from '../LogoSquareLarge';
+import StoreContainer from '../StoreContainer';
 
 
 function NavStores() {
@@ -33,7 +34,7 @@ function NavStores() {
                         brands.map( (brand) => {
                             return (
                                 <>
-                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name}/>
+                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
                                 </>
                             )
                         })

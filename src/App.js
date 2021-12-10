@@ -6,6 +6,7 @@ import NavMen from './components/navigation/NavMen';
 import NavWomen from './components/navigation/NavWomen';
 import NavCartContent from './components/navigation/NavCartContent';
 import NavLoginContent from './components/navigation/NavLoginContent';
+import NavStoreCollection from './components/NavStoreCollection';
 import NavStoresCreate from './components/navigation/NavStoresCreate';
 import NavProductsCreate from './components/navigation/NavProductsCreate';
 
@@ -21,8 +22,12 @@ function App() {
       <Route path="women" element={<NavWomen/>} />
       <Route path="cart" element={<NavCartContent/>} />
       <Route path="login" element={<NavLoginContent/>} />
+
+      <Route path="stores/:name" element={<NavStoreCollection/>} />
+
       <Route path="stores/create" element={<NavStoresCreate/>} />
       <Route path="products/create" element={<NavProductsCreate/>} />
+
   
      
     </Routes>

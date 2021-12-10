@@ -25,23 +25,6 @@ function AddToCart(props) {
 
 
     //FUNCTIONS
-    const addOrRemove = () => {
-        if (inCart === true) {
-
-            setInCart(false)
-
-            dispatch(remove_from_cart(item))
-            
-
-        }
-        else {
-
-            setInCart(true)
-            
-            dispatch(add_to_cart(item))
-        }
-    }
-
     const addToCart = () => {
         dispatch(add_to_cart(item))
         setInCart(true)
@@ -53,7 +36,6 @@ function AddToCart(props) {
     }
 
     const displayAdd = () => {
-
         return (
             <>
                 <a className="addToCartButton" onClick={() => addToCart()}>
@@ -79,6 +61,7 @@ function AddToCart(props) {
         )
     }
 
+    //RETURN
     return (
         <>
             {
@@ -89,7 +72,5 @@ function AddToCart(props) {
         </>
     )
 }
-
-// {() => dispatch(add_to_cart(item))}
 
 export default AddToCart
