@@ -119,6 +119,7 @@ function NavCollection() {
                                         prod_image={product.image_url}
                                         prod_size={product.size}
                                         prod_store_logo={product.store.logo_url_square}
+                                        prod = {product}
                                     />
                                 </>
                             )
