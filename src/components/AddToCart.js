@@ -5,41 +5,62 @@ import { add_to_cart, remove_from_cart } from './actions/actionCreator'
 function AddToCart(props) {
 
     // STATES
-    const [add, setAdd] = useState(true);
 
     const cart = useSelector(state => state.cart)
     const dispatch = useDispatch()
 
-    const alertTest = () => {
-        alert("button clicked")
-    }
-
-    const fakeItem = {
-        name: "testName"
-    }
-
+    //iterate through cart to see if this item is already there, and set state accordingly
     const item = props.prod;
 
-    const addOrRemove = () => {
-        if (add === true) {
+    const checkInCart = () => {
+        const result = cart.filter(product => product.name === item.name)
+        if (result.length === 1) {  
+            return true
+        } else {
+            return false
+        }
+    }
 
-            setAdd(false)
-            dispatch(add_to_cart(item))
+    const [inCart, setInCart] = useState(checkInCart());
+
+
+    //FUNCTIONS
+    const addOrRemove = () => {
+        if (inCart === true) {
+
+            setInCart(false)
+
+            dispatch(remove_from_cart(item))
+            
 
         }
         else {
 
-            setAdd(true)
-            dispatch(remove_from_cart(item))
+            setInCart(true)
+            
+            dispatch(add_to_cart(item))
         }
+    }
+
+    const addToCart = () => {
+        dispatch(add_to_cart(item))
+        setInCart(true)
+    }
+
+    const removeFromCart = () => {
+        dispatch(remove_from_cart(item))
+        setInCart(false)
     }
 
     const displayAdd = () => {
 
         return (
             <>
-                <a className="addToCartButton" onClick={() => addOrRemove()}>
+                <a className="addToCartButton" onClick={() => addToCart()}>
                     ADD TO CART
+                    {/* {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
+                    {cart.length > 0 ? <p>cart has stuff in it </p> : <p>cart is empty</p>}
+                    {checkInCart() ? <p>this is in cart </p> : <p>this is not in cart</p>} */}
                 </a>
         </>
         )
@@ -48,8 +69,11 @@ function AddToCart(props) {
     const displayRemove = () => {
         return (
             <>
-                <a className="addToCartButton" onClick={() => addOrRemove()}>
+                <a className="removeFromCartButton" onClick={() => removeFromCart()}>
                     REMOVE FROM CART
+                    {/* {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
+                    {cart.length > 0  ? <p>cart has stuff in it </p> : <p>cart is empty</p>}
+                    {checkInCart() ? <p>this is in cart </p> : <p>this is not in cart</p>} */}
                 </a>
         </>
         )
@@ -58,9 +82,9 @@ function AddToCart(props) {
     return (
         <>
             {
-                add
-                ? displayAdd()
-                : displayRemove()
+                inCart
+                ? displayRemove()
+                : displayAdd()
             }
         </>
     )
