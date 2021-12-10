@@ -1,6 +1,6 @@
 export const increment = () => ({ type: "increment" })
 export const decrement = () => ({ type: "decrement" })
-export const add_to_cart = () => ({ type: "add_to_cart" })
+export const add_to_cart = (payload) => ({ type: "add_to_cart", item: payload })
 export const remove_from_cart = () => ({ type: "remove_from_cart" })
 
 

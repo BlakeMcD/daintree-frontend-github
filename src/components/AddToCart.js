@@ -18,7 +18,8 @@ function AddToCart(props) {
     const item = props.prod;
 
     return (
-        <a className="addToCartButton" onClick={() => dispatch(add_to_cart(item))} >ADD TO CART</a>
+        <a className="addToCartButton" onClick={() => dispatch(add_to_cart(item))
+        } >ADD TO CART</a>
     )
 }
 
