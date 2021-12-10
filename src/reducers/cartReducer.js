@@ -5,7 +5,9 @@ export default function cartReducer(cart=[{name: "Blake"}, {name: "Bruce"}], act
             // console.log(action.item)
             return [...cart, action.item]
         case 'remove_from_cart':
-            return cart
+            return [
+                ...cart.filter(item => item  !== action.item)
+            ]
         default: 
             return cart
     }
