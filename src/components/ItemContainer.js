@@ -4,7 +4,7 @@ import AddToCart from './AddToCart'
 function ItemContainer(props) {
 
     //give price decimal point and dollar sign
-    const priceWithoutFormatting = String(props.prod.price);
+    const priceWithoutFormatting = String(props.prod.price_cents);
     const priceWithFormatting = "$"+priceWithoutFormatting.substring(0, priceWithoutFormatting.length - 2) +"."+priceWithoutFormatting.substring(priceWithoutFormatting.length - 2);
 
     return (
