@@ -42,11 +42,21 @@ function AddToCart(props) {
         }
     }
 
+    const addToCart = () => {
+        dispatch(add_to_cart(item))
+        setInCart(true)
+    }
+
+    const removeFromCart = () => {
+        dispatch(remove_from_cart(item))
+        setInCart(false)
+    }
+
     const displayAdd = () => {
 
         return (
             <>
-                <a className="addToCartButton" onClick={() => addOrRemove()}>
+                <a className="addToCartButton" onClick={() => addToCart()}>
                     ADD TO CART
                     {/* {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
                     {cart.length > 0 ? <p>cart has stuff in it </p> : <p>cart is empty</p>}
@@ -59,7 +69,7 @@ function AddToCart(props) {
     const displayRemove = () => {
         return (
             <>
-                <a className="removeFromCartButton" onClick={() => addOrRemove()}>
+                <a className="removeFromCartButton" onClick={() => removeFromCart()}>
                     REMOVE FROM CART
                     {/* {inCart ? <p>inCart is true</p> : <p>inCart is false</p>}
                     {cart.length > 0  ? <p>cart has stuff in it </p> : <p>cart is empty</p>}

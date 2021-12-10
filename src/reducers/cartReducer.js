@@ -6,7 +6,7 @@ export default function cartReducer(cart=[], action) {
             return [...cart, action.item]
         case 'remove_from_cart':
             return [
-                ...cart.filter(item => item  !== action.item)
+                ...cart.filter(item => item.name  !== action.item.name)
             ]
         default: 
             return cart
