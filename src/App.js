@@ -10,7 +10,7 @@ import NavStoreCollection from './components/NavStoreCollection';
 import NavStoresCreate from './components/navigation/NavStoresCreate';
 import NavProductsCreate from './components/navigation/NavProductsCreate';
 
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 function App() {
   return (

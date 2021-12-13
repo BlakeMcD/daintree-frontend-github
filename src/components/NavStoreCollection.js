@@ -2,19 +2,76 @@ import React, { useState, useEffect } from 'react'
 import Header from './Header'
 import Footer from './Footer'
 import { useParams } from "react-router-dom"
-// import ItemContainer from '../ItemContainer' 
-// import Filter from '../Filter'
+import ItemContainer from './ItemContainer'
 
 function NavStoreCollection() {
 
-        const {name}= useParams();
+    //STATE
+    const [products, setProducts] = useState([]);
 
-        return (
-        <>
-            <Header/>
-            <p>This is the store page for {name}</p>
-            <Footer/>
-        </>
+    const { name } = useParams();
+
+    //PRODUCT API REQUEST
+    const url_products = 'http://localhost:3000/api/v1/products'
+
+    useEffect( async() => {
+        //fetch data
+        const response = await fetch(url_products);
+        const data = await response.json();
+
+        
+        //send data to state
+        const store_products = data.filter(product => {
+            // console.log(product.store.name)
+            // console.log(name)
+            return product.store.name == name
+        })
+        setProducts(store_products)
+        console.log(store_products)
+    }, [])
+
+
+    // RENDER PRODUCTS
+    const renderProducts = () => {
+        if (products.length === 0) {
+            return (
+                <p>Products Loading</p>
+            )
+        }
+        else {
+            return (
+                <div className="collectionContainer">
+                    {
+                        products.map( (product) => {
+                            return (
+                                <>
+                                    <ItemContainer
+                                        key={product.id}
+                                        prod_name={product.name}
+                                        prod_price={product.price_cents}
+                                        prod_stock={product.stock}
+                                        prod_image={product.image_url}
+                                        prod_size={product.size}
+                                        prod_store_logo={product.store.logo_url_square}
+                                        prod = {product}
+                                    />
+                                </>
+                            )
+                        })
+                    }
+                </div>  
+            )
+        }
+    }
+
+    return (
+    <>
+        <Header/>
+        <p>This is the store page for {name}</p>
+        {renderProducts()}
+        
+        <Footer/>
+    </>
     )
 
 

@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, sendSizeToParent, sendButtonSubmitToParent} ) {
     //USESTATES
-    const [subcategory, setSubcategory] = useState("blonk")
-    const [gender, setGender] = useState("blonk")
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("handleSubmit runs")
-        {sendButtonSubmitToParent()}
+        sendButtonSubmitToParent()
     
     }
 
