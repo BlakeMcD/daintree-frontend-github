@@ -13,6 +13,7 @@ import NavProductsCreate from './components/navigation/NavProductsCreate';
 import { Routes, Route } from "react-router-dom"
 
 function App() {
+
   return (
     <Routes>
       <Route exact path="/" element={<Home/>} />
@@ -24,9 +25,10 @@ function App() {
       <Route path="login" element={<NavLoginContent/>} />
 
       <Route path="stores/:name" element={<NavStoreCollection/>} />
+      <Route path="stores/:name/products" element={<NavStoreCollection/>} />
 
       <Route path="stores/create" element={<NavStoresCreate/>} />
-      <Route path="products/create" element={<NavProductsCreate/>} />
+      <Route path="stores/:name/products/create" element={<NavProductsCreate/>} />
 
   
      

@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
+import { useParams, useNavigate } from "react-router-dom"
+import jwtDecode from 'jwt-decode'
 
 
 
 function NavProductsCreate() {
 
+    const { name } = useParams();
+    const navigate = useNavigate();
     //product
     const [productUid, setProductUid] = useState("")
     const [productName, setProductName] = useState("")
@@ -20,6 +24,22 @@ function NavProductsCreate() {
     const [productPriceCents, setProductPriceCents] = useState(0)
     const [productImageUrl, setProductImageUrl] = useState("")
     const [productStoreId, setProductStoreId] = useState(1)
+
+    //admin persmissions
+    useEffect( () => {
+        const stores = jwtDecode(localStorage.getItem('jwt')).stores
+
+        console.log(jwtDecode(localStorage.getItem('jwt')))
+
+        const check_admin = stores.some(store => name.toLowerCase() === store.toLowerCase())
+
+        // console.log("name:"+name)
+        // console.log("check admin:"+check_admin)
+        if (check_admin === false) {
+            // console.log("CAN WE SEE THIS??!?!?!!?!?")
+            navigate('/', {replace: true})
+        } 
+    },[])
 
 
     //product
@@ -95,6 +115,10 @@ function NavProductsCreate() {
 
                     store_id:productStoreId     
                 }
+                // user: {
+                //     email,
+                //     password
+                // }
             })
         };
 
@@ -111,7 +135,7 @@ function NavProductsCreate() {
     return (
         <>
             <Header/>
-            <h1>Add a New Product</h1>
+            <h1>Add a New Product for {name}</h1>
             <form onSubmit={handleSubmit}>
                 <h2>PRODUCT INFO</h2>
                 <label>
