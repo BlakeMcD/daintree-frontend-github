@@ -33,7 +33,7 @@ function NavStores() {
                         brands.map( (brand) => {
                             return (
                                 <>
-                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name}/>
+                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
                                 </>
                             )
                         })

@@ -1,38 +1,49 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, sendSizeToParent, sendButtonSubmitToParent} ) {
+function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, sendSizeToParent, sendButtonSubmitToParent, renderStore} ) {
     //USESTATES
-    const [subcategory, setSubcategory] = useState("blonk")
-    const [gender, setGender] = useState("blonk")
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("handleSubmit runs")
-        {sendButtonSubmitToParent()}
+        sendButtonSubmitToParent()
     
+    }
+
+    const displayStore = () => {
+        if (renderStore === true) {
+            return (
+                <>
+                    <label> Store
+                        <br/>                 
+                        <select onChange={(event) => {sendStoreToParent(event.target.value)}}>
+                            <option selected value="blank"></option>
+                            <option value="Pact">Pact</option>
+                            <option value="Patagonia">Patagonia</option>
+                            <option value="Quince">Quince</option>
+                            <option value="Reformation">Reformation</option>
+                            <option value="Vetta">Vetta</option>
+                            <option value="Tentree">Tentree</option>
+                            <option value="Boden">Boden</option>
+                            <option value="Summersalt">Summersalt</option>
+                            <option value="Outerknown">Outerknown</option>
+                        </select>
+                    </label>
+                    <br/>
+                    <br/>
+                </>
+            )
+        } 
+        else {
+            return null
+        }
     }
 
     return (
         <>
             <p>Filter Criteria SubCategory</p>
             <form id="filter_criteria" onSubmit={handleSubmit}>
-                <label> Store
-                    <br/>                 
-                    <select onChange={(event) => {sendStoreToParent(event.target.value)}}>
-                        <option selected value="blank"></option>
-                        <option value="Pact">Pact</option>
-                        <option value="Patagonia">Patagonia</option>
-                        <option value="Quince">Quince</option>
-                        <option value="Reformation">Reformation</option>
-                        <option value="Vetta">Vetta</option>
-                        <option value="Tentree">Tentree</option>
-                        <option value="Boden">Boden</option>
-                        <option value="Summersalt">Summersalt</option>
-                        <option value="Outerknown">Outerknown</option>
-                    </select>
-                </label>
-                <br/>
-                <br/>
+                {displayStore()}
                 <label> Subcategory
                     <br/>
                     

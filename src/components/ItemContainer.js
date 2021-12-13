@@ -11,7 +11,7 @@ function ItemContainer(props) {
         <div className="item">
 
             <div className="item__images">
-                <img className="item__images__itemImage" src={props.prod.image_url} alt="Item Image"/>
+                <img className="item__images__itemImage" src={props.prod.image_url}/>
                 <img className="item__images__itemStoreLogo" src={props.prod.store.logo_url_square}  alt="Store Logo"/>
             </div>
             <p className="item__title">{props.prod.name}</p>

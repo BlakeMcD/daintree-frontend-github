@@ -77,7 +77,7 @@ function NavCollection() {
     }
     const sendGenderToParent = (event) => {
         setGen({event})
-    }
+    } 
     const sendSizeToParent = (event) => {
         setSiz({event})
     }
@@ -136,7 +136,7 @@ function NavCollection() {
             <div className="spacer"/>
             <div className ="filterAndContainer">
                 <div className="filter">
-                    <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent}/>
+                    <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={true}/>
                 </div>
                 {renderProducts()}
             </div>
