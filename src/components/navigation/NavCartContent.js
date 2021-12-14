@@ -3,6 +3,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import { useSelector } from 'react-redux'
 import ItemContainer from '../ItemContainer'
+import CartPrice from '../CartPrice'
 
 
 function NavCartContent() {
@@ -20,10 +21,11 @@ function NavCartContent() {
             let peeps = []
             for (let item of cart) {             
                 peeps.push(
-                <ItemContainer
-                    key={item.id}
-                    prod = {item}
-                />) 
+                    <ItemContainer
+                        key={item.id}
+                        prod = {item}
+                    />
+                ) 
             }
             return peeps
         }
@@ -33,7 +35,16 @@ function NavCartContent() {
         <div>
             <Header/>
             <h1>Nav Cart Content Page</h1>
-            {cartItems()}
+            <div className="cartContainerContainer">
+                <div className="cartContainer">
+                    <div className="cartContainer__items">
+                        {cartItems()}
+                    </div>
+                    <div className="cartContainer__total">
+                        <CartPrice/>
+                    </div>
+                </div>
+            </div>
             <Footer/>
         </div>
     )
