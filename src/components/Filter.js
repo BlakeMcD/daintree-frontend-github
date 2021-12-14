@@ -63,7 +63,7 @@ function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, s
 
     return (
         <>
-            <p>Filter Criteria SubCategory</p>
+            <h3>FILTER</h3>
             <form id="filter_criteria" onSubmit={handleSubmit}>
                 {displayStore()}
                 <label> Subcategory

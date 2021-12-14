@@ -136,10 +136,12 @@ function NavWomen() {
             <Header/>
             <div className="spacer"/>
             <div className ="filterAndContainer">
-                <div className="filter">
+                <div className="filterAndContainer__filter">
                     <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={true} renderGender={false}/>
                 </div>
-                {renderProducts()}
+                <div className="filterAndContainer__products">
+                    {renderProducts()}
+                </div>
             </div>
             <div className="spacer"/>
             <Footer/>

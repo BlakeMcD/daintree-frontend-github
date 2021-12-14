@@ -128,17 +128,19 @@ function NavStoreCollection() {
     }
 
     return (
-    <>
+        <>
         <Header/>
-            <div className="spacer"/>
-            <div className ="filterAndContainer">
-                <div className="filter">
-                    <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={false} renderGender={true}/>
-                </div>
+        <div className="spacer"/>
+        <div className ="filterAndContainer">
+            <div className="filterAndContainer__filter">
+                <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={false} renderGender={true}/>
+            </div>
+            <div className="filterAndContainer__products">
                 {renderProducts()}
             </div>
-            <div className="spacer"/>
-            <Footer/>
+        </div>
+        <div className="spacer"/>
+        <Footer/>
     </>
     )
 }

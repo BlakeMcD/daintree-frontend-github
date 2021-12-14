@@ -37,9 +37,8 @@ function NavStores() {
                                         <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
                                     </div>
                                     <div className="brandOverview__text">
-                                        <p>Description:</p>
-                                        <br/>
-                                        <p>{brand.description}</p>
+                                        <p>Description</p>
+                                        <p>Description: {brand.description}</p>
                                     </div>
                                 </div>
                             )
