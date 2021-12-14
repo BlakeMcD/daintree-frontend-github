@@ -36,15 +36,7 @@ function ShopSlideshow() {
                                     )
                                 })
                             }
-                            {
-                                brands.map( (brand) => {
-                                    return (
-                                        <div className="slideshowWrapper__slide">
-                                            <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
-                                        </div>
-                                    )
-                                })
-                            }
+                        
                     </div>
                 </div>  
             )

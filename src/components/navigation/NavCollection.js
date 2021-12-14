@@ -136,7 +136,7 @@ function NavCollection() {
             <div className="spacer"/>
             <div className ="filterAndContainer">
                 <div className="filter">
-                    <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={true}/>
+                    <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={true} renderGender={true}/>
                 </div>
                 {renderProducts()}
             </div>
