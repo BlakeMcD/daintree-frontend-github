@@ -29,7 +29,7 @@ function NavProductsCreate() {
     useEffect( () => {
         const stores = jwtDecode(localStorage.getItem('jwt')).stores
 
-        console.log(jwtDecode(localStorage.getItem('jwt')))
+        // console.log(jwtDecode(localStorage.getItem('jwt')))
 
         const check_admin = stores.some(store => name.toLowerCase() === store.toLowerCase())
 

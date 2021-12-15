@@ -32,9 +32,15 @@ function NavStores() {
                     {
                         brands.map( (brand) => {
                             return (
-                                <>
-                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
-                                </>
+                                <div className="brandOverview">
+                                    <div className="brandOverview__image">
+                                        <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
+                                    </div>
+                                    <div className="brandOverview__text">
+                                        <p>Description</p>
+                                        <p>Description: {brand.description}</p>
+                                    </div>
+                                </div>
                             )
                         })
                     }

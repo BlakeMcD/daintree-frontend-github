@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, sendSizeToParent, sendButtonSubmitToParent, renderStore} ) {
+function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, sendSizeToParent, sendButtonSubmitToParent, renderStore, renderGender} ) {
     //USESTATES
 
     const handleSubmit = (event) => {
@@ -39,9 +39,31 @@ function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, s
         }
     }
 
+    const displayGender = () => {
+        if (renderGender === true) {
+            return (
+                <>
+                    <label> Gender
+                        <br/>                 
+                        <select onChange={(event) => {sendGenderToParent(event.target.value)}}>
+                            <option selected value="blank"></option>
+                            <option value="m">M</option>
+                            <option value="f">F</option>
+                        </select>
+                    </label>
+                    <br/>
+                    <br/>
+                </>
+            )
+        } 
+        else {
+            return null
+        }
+    }
+
     return (
         <>
-            <p>Filter Criteria SubCategory</p>
+            <h3>FILTER</h3>
             <form id="filter_criteria" onSubmit={handleSubmit}>
                 {displayStore()}
                 <label> Subcategory
@@ -56,16 +78,7 @@ function Filter( {sendStoreToParent, sendCategoryToParent, sendGenderToParent, s
                 </label>
                 <br/>
                 <br/>
-                <label> Gender
-                    <br/>
-                    <select onChange={(event) => {sendGenderToParent(event.target.value)}}>
-                        <option selected value="blank"></option>
-                        <option value="m">M</option>
-                        <option value="f">F</option>
-                    </select>
-                </label>
-                <br/>
-                <br/>
+                {displayGender()}
                 <label> Size
                     <br/>
                     <select onChange={(event) => {sendSizeToParent(event.target.value)}}>
