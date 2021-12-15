@@ -133,7 +133,7 @@ function NavCollection() {
     return (
         <>
             <Header/>
-            <div className="spacer"/>
+            <h1>BROWSE OUR COLLECTION</h1>
             <div className ="filterAndContainer">
                 <div className="filterAndContainer__filter">
                     <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={true} renderGender={true}/>

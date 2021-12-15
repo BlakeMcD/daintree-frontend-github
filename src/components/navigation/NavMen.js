@@ -134,7 +134,7 @@ function NavMen() {
     return (
         <>
             <Header/>
-            <div className="spacer"/>
+            <h1>MEN</h1>
             <div className ="filterAndContainer">
                 <div className="filterAndContainer__filter">
                     <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={true} renderGender={false}/>
