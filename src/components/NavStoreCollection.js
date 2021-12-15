@@ -9,6 +9,7 @@ function NavStoreCollection() {
 
     //STATE
     const [products, setProducts] = useState([]);
+    const [pageLogo, setPageLogo] = useState([]);
     const [subcat, setSubcat] = useState("blank");
     const [gen, setGen] = useState("blank");
     const [siz, setSiz] = useState("blank");
@@ -82,15 +83,29 @@ function NavStoreCollection() {
         const response = await fetch(url_products);
         const data = await response.json();
 
-        
         //send data to state
         const store_products = data.filter(product => {
-            // console.log(product.store.name)
-            // console.log(name)
             return product.store.name == name
         })
         setProducts(store_products)
         console.log(store_products)
+    }, [])
+
+    //STORE API REQUEST
+    const url_stores = 'http://localhost:3000/api/v1/stores'
+
+    useEffect( async() => {
+        //fetch data
+        const response = await fetch(url_stores);
+        const data = await response.json();
+
+        //send data to state
+        const store_rect_logo = data.filter(store => {
+            return store.name == name
+        })
+        setPageLogo(store_rect_logo[0].logo_url_landscape)
+        // console.log("Page Logo:"+store_rect_logo[0].logo_url_landscape)
+        // console.log("Page Logo:"+pageLogo)
     }, [])
 
 
@@ -127,10 +142,27 @@ function NavStoreCollection() {
         }
     }
 
+    //RENDER LOGO
+    const renderStoreLogo = () => {
+        if (pageLogo.length === 0) {
+            return (
+                <p>Logo Loading</p>
+            )
+        }
+        else {
+            return (
+                <div className="storeLogoLandscape">
+                    <img src={pageLogo}/>
+                </div>
+            )
+        }
+    }
+
     return (
         <>
         <Header/>
         <div className="spacer"/>
+        {renderStoreLogo()}
         <div className ="filterAndContainer">
             <div className="filterAndContainer__filter">
                 <Filter sendStoreToParent={sendStoreToParent} sendCategoryToParent={sendCategoryToParent} sendGenderToParent={sendGenderToParent} sendSizeToParent={sendSizeToParent} renderStore={false} renderGender={true}/>

@@ -172,9 +172,7 @@ header {
 }
 
 
-
 /* FOOTER */
-
 footer {
   display: block; 
 }
@@ -249,6 +247,16 @@ footer {
 .brandOverview__text {
   /* float: left;
   width: 400px; */
+}
+
+.storeLogoLandscape {
+  text-align: center;
+  margin: 0 0 100px 0;
+}
+
+.storeLogoLandscape img {
+  max-width: 1000px;
+  max-height: 600px;
 }
 
 /* ITEM */
