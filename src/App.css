@@ -74,16 +74,16 @@ h2 {
 }
 
 .button:hover {
-  background-color: #464646;
+  color: #F0EACE;
 }
 
 .addToCartButton {
   display: inline-block;
   margin-top: 5px;
   text-decoration: none;
-  background-color: #e8e8e8; 
+  background-color: #191919; 
   border: none;
-  color: black;
+  color: white;
   padding: 15px 32px;
   font-size: 16px;
   border-radius: 8px;
@@ -92,7 +92,7 @@ h2 {
 
 .addToCartButton:hover {
   /* background-color: #464646; */
-  color: #bababa;
+  color: #F0EACE;
 }
 
 .removeFromCartButton {
@@ -244,7 +244,9 @@ footer {
   text-align: center;
   display: inline-block;
   float: left;
-  border: 2px solid black;
+  /* border: 2px solid black; */
+  background-color: #e8e8e8;
+  border-radius: 10px;;
   margin: 0px 20px 40px 20px;
 }
 
