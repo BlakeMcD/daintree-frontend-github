@@ -589,7 +589,12 @@ footer {
 }
 
 .newProductContainer form {
-  width: 500px;
+  width: 800px;
+}
+
+.newProductSubContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
   

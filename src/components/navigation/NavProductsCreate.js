@@ -134,65 +134,73 @@ function NavProductsCreate() {
                 <div className="newProductContainer">
                     <h1>Add a New Product for {name}</h1>
                     <form onSubmit={handleSubmit}>
-                        <label>
-                            UID:
-                            <input type="text" value={productUid} onChange={handleChangeUid}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Product Name:
-                            <input type="text" value={productName} onChange={handleChangeName}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Category:
-                            <input type="text" value={productCategory} onChange={handleChangeCategory}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Sub Category:
-                            <input type="text" value={productSubCategory} onChange={handleChangeSubCategory}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Description:
-                            <input type="text" value={productDescription} onChange={handleChangeDescription}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Gender:
-                            <input type="text" value={productGender} onChange={handleChangeGender}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Age Group:
-                            <input type="text" value={productAgeGroup} onChange={handleChangeAgeGroup}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Colour:
-                            <input type="text" value={productColour} onChange={handleChangeColour}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Size:
-                            <input type="text" value={productSize} onChange={handleChangeSize}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Stock:
-                            <input type="number" value={productStock} onChange={handleChangeStock}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Price (in cents):
-                            <input type="number" value={productPriceCents} onChange={handleChangePriceCents}/>
-                        </label>
-                        <br/><br/>
-                        <label>
-                            Image URL:
-                            <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
-                        </label>
+                        <div className="newProductSubContainer">
+                            <div className="newProductSubContainer__one">
+                                <h3>Label</h3>
+                                <label>
+                                    UID:
+                                    <input type="text" value={productUid} onChange={handleChangeUid}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Product Name:
+                                    <input type="text" value={productName} onChange={handleChangeName}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Category:
+                                    <input type="text" value={productCategory} onChange={handleChangeCategory}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Sub Category:
+                                    <input type="text" value={productSubCategory} onChange={handleChangeSubCategory}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Description:
+                                    <input type="text" value={productDescription} onChange={handleChangeDescription}/>
+                                </label>
+                                <br/><br/>
+                            </div>
+                            <div className="newProductSubContainer__two">
+                                <h3>Specifications</h3>
+                                <label>
+                                    Gender:
+                                    <input type="text" value={productGender} onChange={handleChangeGender}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Age Group:
+                                    <input type="text" value={productAgeGroup} onChange={handleChangeAgeGroup}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Colour:
+                                    <input type="text" value={productColour} onChange={handleChangeColour}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Size:
+                                    <input type="text" value={productSize} onChange={handleChangeSize}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Stock:
+                                    <input type="number" value={productStock} onChange={handleChangeStock}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Price (in cents):
+                                    <input type="number" value={productPriceCents} onChange={handleChangePriceCents}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Image URL:
+                                    <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
+                                </label>
+                            </div>
+                        </div>
                         <br/><br/>
                         <input type="submit" value="Submit" />
                     </form>
