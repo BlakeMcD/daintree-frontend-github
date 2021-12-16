@@ -99,6 +99,7 @@ function NavStoresCreate() {
                             <input type="text" value={storeUrlLandscape} onChange={handleChangeUrlLandscape}/>
                         </label>
                         <br/><br/>
+                        <br/><br/>
                         <input type="submit" value="Submit" />
                     </form>
                 </div>

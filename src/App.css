@@ -579,5 +579,17 @@ footer {
   flex: 1;
 }
 
+.newProductContainerContainer {
+  display: flex;
+}
+
+.newProductContainer label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newProductContainer form {
+  width: 500px;
+}
 
   
