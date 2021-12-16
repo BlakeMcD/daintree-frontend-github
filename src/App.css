@@ -510,5 +510,26 @@ footer {
   flex: 1;
 }
 
+/* LOGIN */
 
+.loginContainer {
+  margin: 0 10% 0 10%;
+  display: flex;
+}
 
+.loginContainer__email {
+  flex: 1;
+}
+
+.loginContainer__auth0 {
+  flex: 1;
+  text-align: center;
+}
+
+.loginContainer__header {
+  text-align: center;
+}
+
+.emailLogin {
+  text-align: center;
+}
