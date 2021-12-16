@@ -149,12 +149,19 @@ function NavProductsCreate() {
                                 <br/><br/>
                                 <label>
                                     Category:
-                                    <input type="text" value={productCategory} onChange={handleChangeCategory}/>
+                                    <select onChange={handleChangeCategory}>
+                                        <option selected value="clothing">Clothing</option>
+                                    </select>
                                 </label>
                                 <br/><br/>
                                 <label>
                                     Sub Category:
-                                    <input type="text" value={productSubCategory} onChange={handleChangeSubCategory}/>
+                                    <select onChange={handleChangeCategory}>
+                                        <option selected value="blank"></option>
+                                        <option selected value="jeans">Jeans</option>
+                                        <option selected value="shirt">Shirt</option>
+                                        <option selected value="jacket">Jacket</option>
+                                    </select>
                                 </label>
                                 <br/><br/>
                                 <label>
@@ -165,14 +172,41 @@ function NavProductsCreate() {
                             </div>
                             <div className="newProductSubContainer__two">
                                 <h3>Specifications</h3>
+
+                            {/* <select onChange={(event) => {sendStoreToParent(event.target.value)}}>
+                                <option selected value="blank"></option>
+                                <option value="Pact">Pact</option>
+                                <option value="Patagonia">Patagonia</option>
+                                <option value="Quince">Quince</option>
+                                <option value="Reformation">Reformation</option>
+                                <option value="Vetta">Vetta</option>
+                                <option value="Tentree">Tentree</option>
+                                <option value="Boden">Boden</option>
+                                <option value="Summersalt">Summersalt</option>
+                                <option value="Outerknown">Outerknown</option>
+                            </select> */}
+
+
+
                                 <label>
                                     Gender:
-                                    <input type="text" value={productGender} onChange={handleChangeGender}/>
+                                    <select onChange={handleChangeGender}>
+                                        <option selected value="blank"></option>
+                                        <option value="f">Female</option>
+                                        <option value="m">Male</option>
+                                    </select>
                                 </label>
                                 <br/><br/>
                                 <label>
                                     Age Group:
-                                    <input type="text" value={productAgeGroup} onChange={handleChangeAgeGroup}/>
+                                    <select onChange={handleChangeAgeGroup}>
+                                        <option selected value="blank"></option>
+                                        <option value="adult">adult</option>
+                                        <option value="teen">teen</option>
+                                        <option value="child">child</option>
+                                        <option value="baby">baby</option>
+                                        <option value="foetus">foetus</option>
+                                    </select>
                                 </label>
                                 <br/><br/>
                                 <label>
@@ -182,7 +216,12 @@ function NavProductsCreate() {
                                 <br/><br/>
                                 <label>
                                     Size:
-                                    <input type="text" value={productSize} onChange={handleChangeSize}/>
+                                    <select onChange={handleChangeSize}>
+                                        <option selected value="blank"></option>
+                                        <option value="s">Small</option>
+                                        <option value="m">Medium</option>
+                                        <option value="l">Large</option>
+                                    </select>
                                 </label>
                                 <br/><br/>
                                 <label>
