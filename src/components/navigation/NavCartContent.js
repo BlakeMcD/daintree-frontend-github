@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import { useSelector } from 'react-redux'
-import ItemContainer from '../ItemContainer'
+import ItemContainerCart from '../ItemContainerCart'
 import CartPrice from '../CartPrice'
 
 
@@ -21,7 +21,7 @@ function NavCartContent() {
             let peeps = []
             for (let item of cart) {             
                 peeps.push(
-                    <ItemContainer
+                    <ItemContainerCart
                         key={item.id}
                         prod = {item}
                     />
