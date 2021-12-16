@@ -25,7 +25,7 @@ function NavProductsCreate() {
     const [productImageUrl, setProductImageUrl] = useState("")
     const [productStoreId, setProductStoreId] = useState(1)
 
-    //admin persmissions
+    //admin permissions
     useEffect( () => {
         const stores = jwtDecode(localStorage.getItem('jwt')).stores
         const check_admin = stores.some(store => name.toLowerCase() === store.toLowerCase())
