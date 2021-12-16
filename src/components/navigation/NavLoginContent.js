@@ -4,8 +4,11 @@ import Footer from '../Footer'
 import Auth0LoginButton from '../Auth0LoginButton'
 import Auth0LogoutButton from '../Auth0LogoutButton'
 import Auth0Profile from '../Auth0Profile'
+import { useNavigate } from "react-router-dom"
 
 function NavLoginContent() {
+
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -43,8 +46,10 @@ function NavLoginContent() {
                 data => {
                  console.log(data)
                  localStorage.setItem("jwt", data.jwt)
+                //  localStorage.removeItem("jwt")
                 }
             )
+            navigate('/', {replace: true})
     }
 
 

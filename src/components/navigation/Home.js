@@ -20,8 +20,8 @@
             </div>
             <h2>Featured Stores</h2>
             <ShopSlideshow/>
-            <h2>Most Wanted</h2>
-             <MostWantedContainer/>
+            {/* <h2>Most Wanted</h2>
+             <MostWantedContainer/> */}
              <div className="spacer"/>
              <Footer/>
          </>

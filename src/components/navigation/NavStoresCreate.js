@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
-
-
+import { useNavigate } from "react-router-dom"
+import jwtDecode from 'jwt-decode'
 
 function NavStoresCreate() {
+
+    //admin permissions
+    const navigate = useNavigate();
+
+    useEffect( () => {
+        const system_admin = jwtDecode(localStorage.getItem('jwt')).system_admin
+
+        if (!system_admin) {
+            navigate('/', {replace: true})
+        } 
+    },[])
 
     const [storeName, setStoreName] = useState("")
     const [storeDescription, setStoreDescription] = useState("")
@@ -63,26 +74,33 @@ function NavStoresCreate() {
     return (
         <>
             <Header/>
-            <h1>Add a New Store</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Name:
-                    <input type="text" value={storeName} onChange={handleChangeName}/>
-                </label>
-                <label>
-                    Description:
-                    <input type="text" value={storeDescription} onChange={handleChangeDescription}/>
-                </label>
-                <label>
-                    Logo Square URL:
-                    <input type="text" value={storeUrlSquare} onChange={handleChangeUrlSquare}/>
-                </label>
-                <label>
-                    Logo Square Landscape:
-                    <input type="text" value={storeUrlLandscape} onChange={handleChangeUrlLandscape}/>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div className="newStoreContainer">
+                <h1>Add a New Store</h1>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Name:
+                        <input type="text" value={storeName} onChange={handleChangeName}/>
+                    </label>
+                    <br/><br/>
+                    <label>
+                        Description:
+                        <input type="text" value={storeDescription} onChange={handleChangeDescription}/>
+                    </label>
+                    <br/><br/>
+                    <label>
+                        Logo Square URL:
+                        <input type="text" value={storeUrlSquare} onChange={handleChangeUrlSquare}/>
+                    </label>
+                    <br/><br/>
+                    <label>
+                        Logo Square Landscape:
+                        <input type="text" value={storeUrlLandscape} onChange={handleChangeUrlLandscape}/>
+                    </label>
+                    <br/><br/>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+            <div className="spacer"/>
             <Footer/>
         </>
     )
