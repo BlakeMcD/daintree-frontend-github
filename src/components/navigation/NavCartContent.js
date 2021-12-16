@@ -31,20 +31,35 @@ function NavCartContent() {
         }
     }
 
+    const renderCart = () => {
+        if (cart.length === 0) {
+            return (
+                <h1>Your cart is empty!</h1>
+            )
+        }
+        else {
+            return(
+                <>
+                    <h1>Cart</h1>
+                    <div className="cartContainerContainer">
+                        <div className="cartContainer">
+                            <div className="cartContainer__items">
+                                {cartItems()}
+                            </div>
+                            <div className="cartContainer__total">
+                                <CartPrice/>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )
+        }
+    }
+
     return (
         <div>
             <Header/>
-            <h1>Cart</h1>
-            <div className="cartContainerContainer">
-                <div className="cartContainer">
-                    <div className="cartContainer__items">
-                        {cartItems()}
-                    </div>
-                    <div className="cartContainer__total">
-                        <CartPrice/>
-                    </div>
-                </div>
-            </div>
+                {renderCart()}
             <Footer/>
         </div>
     )
