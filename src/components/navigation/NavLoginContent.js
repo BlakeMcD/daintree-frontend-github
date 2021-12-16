@@ -51,22 +51,38 @@ function NavLoginContent() {
     return (
         <>
             <Header/>
-            <h1> Nav Login Content Content Page</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Email Address:
-                    <input type="text" value={email} onChange={handleChangeEmail}/>
-                </label>
-                <label>
-                    Password:
-                    <input type="password" value={password} onChange={handleChangePassword}/>
-                </label>
-                <input type="submit" value="Submit" />
-            </form>
-            <h2>Auth0</h2>
-            <Auth0LoginButton/>
-            <Auth0LogoutButton/>
-            <Auth0Profile/>
+            <h1>Login</h1>
+            <div className="loginContainer">
+                <div className="loginContainer__email">
+                    <h3 className="loginContainer__header">Login with your email</h3>
+                    <div className="emailLogin">
+                        <form onSubmit={handleSubmit}>
+                            <label>
+                                Email Address:
+                                <input type="text" value={email} onChange={handleChangeEmail}/>
+                            </label>
+                            <br/>
+                            <br/>
+                            <label>
+                                Password:
+                                <input type="password" value={password} onChange={handleChangePassword}/>
+                            </label>
+                            <br/>
+                            <br/>
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+                <div className="loginContainer__auth0">
+                    <h3 className="loginContainer__header">Login with your social account</h3>
+                    <Auth0LoginButton/>
+                    <br/>
+                    <br/>
+                    <Auth0LogoutButton/>
+                    <Auth0Profile/>
+                </div>
+            </div>
+            <div className="spacer"/>
             <Footer/>
         </>
     )

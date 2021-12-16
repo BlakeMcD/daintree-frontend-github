@@ -138,4 +138,17 @@ export function fetchGoals() {
     };
 }
 
-Can delete
+ORIGINAL BRAND OVERVIEW
+.brandOverview {
+  display: inline-block;
+}
+
+.brandOverview__image {
+  float: left;
+  /* width: 300px; */
+  
+}
+.brandOverview__text {
+  /* float: left;
+  width: 400px; */
+}

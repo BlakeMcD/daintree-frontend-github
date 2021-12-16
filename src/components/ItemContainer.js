@@ -16,7 +16,7 @@ function ItemContainer(props) {
             </div>
             <p className="item__title">{props.prod.name}</p>
             <p className="item__price">{priceWithFormatting}</p>
-            <p className="item__stocks">{props.prod.size}</p>
+            {/* <p className="item__stocks">{props.prod.size}</p> */}
             <AddToCart prod={props.prod}/> 
         </div>
     )
