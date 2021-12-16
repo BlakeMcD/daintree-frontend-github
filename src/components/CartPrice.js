@@ -36,9 +36,11 @@ function CartPrice() {
                 priceTotal += item.price_cents;  
                 console.log("priceTotal"+priceTotal)       
                 peeps.push(
-                    <>
-                        <p>{item.name}: {priceFormatting(item)}</p>
-                    </>
+                    <div className="cartPriceContainer">
+                        <span className="cartItemName">{item.name}:</span>
+                        <span className="cartItemPrice">{priceFormatting(item)}</span>
+                        <br/>
+                    </div>
                 ) 
             }
             return peeps
@@ -49,9 +51,12 @@ function CartPrice() {
     console.log("priceTotal"+priceTotal)
     return (
         <div>
+            <h3>Your Cart</h3>
             {cartItems()}
-            <p>Total State: {total}</p>
-            <p>Total: {priceFormattingTotal(priceTotal)}</p>
+            <div className="cartPriceContainer cartPriceContainerTotal">
+                <span className="cartItemName"><b>Grand Total:</b></span>
+                <span className="cartItemPrice"><b>{priceFormattingTotal(priceTotal)}</b></span>
+            </div>
         </div>
     )
 }

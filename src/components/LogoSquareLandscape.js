@@ -7,7 +7,6 @@ function LogoSquareLandscape(props) {
             <NavLink to={`/stores/${props.brandName}`}>
                 <img className="logoSquareLandscape" src={props.imageSource} alt={props.imageAlt}></img>
             </NavLink>
-            <p>can I also see this???</p>
         </>
     )
 }

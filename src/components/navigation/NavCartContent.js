@@ -34,7 +34,7 @@ function NavCartContent() {
     return (
         <div>
             <Header/>
-            <h1>Nav Cart Content Page</h1>
+            <h1>Cart</h1>
             <div className="cartContainerContainer">
                 <div className="cartContainer">
                     <div className="cartContainer__items">
