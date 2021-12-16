@@ -533,3 +533,9 @@ footer {
 .emailLogin {
   text-align: center;
 }
+
+/* NEW PRODUCT FORM */
+.newProductContainer {
+  margin: 0 10% 0 10%;
+  text-align: center;
+}
