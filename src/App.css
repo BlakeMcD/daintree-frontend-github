@@ -229,18 +229,22 @@ footer {
   width: 200px;
 }
 
-/* .brandsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-row-gap:4em;
-} */
+.brandsContainer {
+  margin-left:0%;
+  margin-right: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  justify-content: space-between;
+}
+
 
 .brandOverview {
 
 }
 
 .brandOverview__image {
-  float: left;
+  /* float: left; */
   /* width: 300px; */
   
 }
@@ -358,11 +362,12 @@ footer {
   /* overflow: hidden; */
   flex-wrap: wrap;
   gap: 100px;
+  justify-content: space-between;
 }
 
-.slideshowWrapper__slide {
+/* .slideshowWrapper__slide {
   animation: scroll 40s linear infinite;
-}
+} */
 
 
 /*
