@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react'
 import LogoSquareLarge from './LogoSquareLarge';
 import LogoSquareLandscape from './LogoSquareLandscape';
 import ReactDOM from 'react-dom';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-import { Carousel } from '@trendyol-js/react-carousel';
+// // import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// // import { Carousel } from 'react-responsive-carousel';
+// import { Carousel } from '@trendyol-js/react-carousel';
+// import Coverflow from 'react-coverflow';
+// import { StyleRoot } from 'radium';
+import LogoSquareLargeAnimate from './LogoSquareLargeAnimate';
 
 
 function ShopSlideshow() {
@@ -32,7 +35,16 @@ function ShopSlideshow() {
         else {
             return (
                 <div className="slideshowWrapper">
-                    <Carousel>
+                    {brands.map( (brand) => {
+                        return (
+                            <>
+                                <div className="slideshowWrapper__slide">
+                                    <LogoSquareLarge imageSource={brand.logo_url_square} imageAlt={brand.name} brandName={brand.name} brandId={brand.id}/>
+                                </div>
+                            </>
+                        )
+                    })}
+                    {/* <Carousel>
                         {
                             brands.map( (brand) => {
                                 return (
@@ -44,7 +56,7 @@ function ShopSlideshow() {
                                 )
                             })
                         }   
-                    </Carousel>                    
+                    </Carousel>                     */}
                 </div>
             )
         }
