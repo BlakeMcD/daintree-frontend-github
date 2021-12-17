@@ -2,6 +2,7 @@ import React from 'react'
 import NavLogo from "./navigation/NavLogo";
 import NavCart from "./navigation/NavCart";
 import NavLogin from "./navigation/NavLogin";
+import NavCreateUser from './navigation/NavCreateUser';
 import { Link } from "react-router-dom"
 
 
@@ -33,6 +34,7 @@ function Header() {
                     <div className="headerBox__userLinks">
                         <NavCart/>
                         <NavLogin/>
+                        <NavCreateUser/>
                     </div>
                 </div>
             </header>

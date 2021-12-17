@@ -9,6 +9,7 @@ import NavLoginContent from './components/navigation/NavLoginContent';
 import NavStoreCollection from './components/NavStoreCollection';
 import NavStoresCreate from './components/navigation/NavStoresCreate';
 import NavProductsCreate from './components/navigation/NavProductsCreate';
+import NavCreateUserContent from './components/navigation/NavCreateUserContent';
 
 import { Routes, Route } from "react-router-dom"
 
@@ -29,6 +30,8 @@ function App() {
 
       <Route path="stores/create" element={<NavStoresCreate/>} />
       <Route path="stores/:name/products/create" element={<NavProductsCreate/>} />
+
+      <Route path="users/new" element={<NavCreateUserContent/>} />
 
   
      
