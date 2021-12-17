@@ -73,10 +73,10 @@ function NavCreateUserContent() {
     return (
         <>
             <Header/>
-            <h1>Login</h1>
+            <h1>CREATE AN ACCOUNT</h1>
             <div className="loginContainer">
                 <div className="loginContainer__email">
-                    <h3 className="loginContainer__header">Login with your email</h3>
+
                     <div className="emailLogin">
                         <form onSubmit={handleSubmit}>
                             <label>

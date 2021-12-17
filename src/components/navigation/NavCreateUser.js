@@ -9,7 +9,7 @@ function NavCreateUser() {
 
     return (
         <>
-            <Link to={"/user/create"}>
+            <Link to={"/users/new"}>
                 <img 
                     alt="Sign In"
                     src={img} 

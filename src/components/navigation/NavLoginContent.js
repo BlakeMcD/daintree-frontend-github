@@ -78,7 +78,7 @@ function NavLoginContent() {
                         </form>
                         <br/><br/>
                         <span><b><i>Don't have an account? </i></b></span>
-                        <a href="/users/create">Sign up</a>
+                        <a href="/users/new">Sign up</a>
                     </div>
                 </div>
                 <div className="loginContainer__auth0">
