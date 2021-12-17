@@ -63,31 +63,33 @@ function NavLogin() {
         else {
             return (
                 <>
-                    <img 
-                        alt="Sign In"
-                        src={img} 
-                        onMouseEnter={() => {
-                            setImg(UserSigninTan)
-                            setText("#F0EACE")
-                        }}
-                        onMouseOut={() => {
-                            setImg(UserSigninWhite)
-                            setText("white")
-                        }}
-                        // onClick={() => dispatch(logout())}
-                    ></img>
-                    <span style={{color:text}} 
-                            onMouseEnter={() => {
-                            setImg(UserSigninTan)
-                            setText("#F0EACE")
-                        }}
-                        onMouseOut={() => {
-                            setImg(UserSigninWhite)
-                            setText("white")
-                        }}>{checkLoggedIn()}
-                        {/* onClick={() => dispatch(logout())} */}
-                    </span>
-                    {/* <p>LoggedIn Status: {checkLoggedIn()}</p> */}
+                    <Link to={"/logout"}>
+                        <>
+                            <img 
+                                alt="Sign In"
+                                src={img} 
+                                onMouseEnter={() => {
+                                    setImg(UserSigninTan)
+                                    setText("#F0EACE")
+                                }}
+                                onMouseOut={() => {
+                                    setImg(UserSigninWhite)
+                                    setText("white")
+                                }}
+                            ></img>
+                            <span style={{color:text}} 
+                                    onMouseEnter={() => {
+                                    setImg(UserSigninTan)
+                                    setText("#F0EACE")
+                                }}
+                                onMouseOut={() => {
+                                    setImg(UserSigninWhite)
+                                    setText("white")
+                                }}>{checkLoggedIn()}
+                            </span>
+                            {/* <p>LoggedIn Status: {checkLoggedIn()}</p> */}
+                        </>
+                    </Link>
                 </>
             )
         }

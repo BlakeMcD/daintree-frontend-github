@@ -121,6 +121,10 @@ h2 {
   color: #F0EACE;
 }
 
+.logoutButtonParent {
+  text-align: center;
+}
+
 
 /* HEADER */
 header { 
