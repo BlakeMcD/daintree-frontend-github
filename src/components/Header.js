@@ -34,7 +34,7 @@ function Header() {
                     <div className="headerBox__userLinks">
                         <NavCart/>
                         <NavLogin/>
-                        <NavCreateUser/>
+                        {/* <NavCreateUser/> */}
                     </div>
                 </div>
             </header>
