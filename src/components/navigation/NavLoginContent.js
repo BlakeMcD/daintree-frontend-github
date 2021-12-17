@@ -54,8 +54,25 @@ function NavLoginContent() {
     }
 
     const logout = (event) => {
+        try {
         console.log("is this working???")
         jwtDecode(localStorage.removeItem("jwt"))
+        }
+        catch(error) {
+            alert("You've been logged out")
+            navigate('/login', {replace: true})
+        }
+
+        // try {
+        //     const system_admin = jwtDecode(localStorage.getItem('jwt')).system_admin
+        //     if (!system_admin) {
+        //         navigate('/', {replace: true})
+        //     } 
+        // }
+        // catch(error) {
+        //     alert("You're not logged in foo!")
+        //     navigate('/login', {replace: true})
+        // }
     }
 
 
@@ -95,9 +112,8 @@ function NavLoginContent() {
                     <Auth0LogoutButton/>
                     <Auth0Profile/>
                 </div>
-                <button onClick={() => logout()}>Logout</button>
             </div>
-            
+            <button onClick={() => logout()}>Logout</button>
             <div className="spacer"/>
             <Footer/>
         </>

@@ -27,13 +27,20 @@ function NavProductsCreate() {
 
     //admin permissions
     useEffect( () => {
-        const stores = jwtDecode(localStorage.getItem('jwt')).stores
+        try {
+            const stores = jwtDecode(localStorage.getItem('jwt')).stores
 
-        const check_admin = stores.some(store => name.toLowerCase() === store.toLowerCase())
+            const check_admin = stores.some(store => name.toLowerCase() === store.toLowerCase())
 
-        if (check_admin === false) {
+            if (check_admin === false) {
             navigate('/', {replace: true})
-        } 
+            } 
+        }
+        catch(error) {
+            alert("You're not logged in foo!")
+            navigate('/login', {replace: true})
+        }
+        
     },[])
 
 

@@ -10,11 +10,18 @@ function NavStoresCreate() {
     const navigate = useNavigate();
 
     useEffect( () => {
-        const system_admin = jwtDecode(localStorage.getItem('jwt')).system_admin
+        try {
+            const system_admin = jwtDecode(localStorage.getItem('jwt')).system_admin
+            if (!system_admin) {
+                navigate('/', {replace: true})
+            } 
+        }
+        catch(error) {
+            alert("You're not logged in foo!")
+            navigate('/login', {replace: true})
+        }
 
-        if (!system_admin) {
-            navigate('/', {replace: true})
-        } 
+        
     },[])
 
     const [storeName, setStoreName] = useState("")
