@@ -37,7 +37,7 @@ function NavCreateUserContent() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const posturl = 'http://localhost:3000/api/v1/login';
+        const posturl = 'http://localhost:3000/api/v1/users/create';
 
         const requestOptions = {
             method: 'POST',
@@ -47,8 +47,12 @@ function NavCreateUserContent() {
                 }, 
             body: JSON.stringify({ 
                 user: {
+                    first_name: firstName,
+                    last_name: lastName,        
                     email,
-                    password
+                    phone,
+                    password,
+                    system_admin: false
                 }
             })
         };
