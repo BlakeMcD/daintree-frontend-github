@@ -5,6 +5,7 @@ import Auth0LoginButton from '../Auth0LoginButton'
 import Auth0LogoutButton from '../Auth0LogoutButton'
 import Auth0Profile from '../Auth0Profile'
 import { useNavigate } from "react-router-dom"
+import jwtDecode from 'jwt-decode'
 
 function NavLoginContent() {
 
@@ -52,6 +53,11 @@ function NavLoginContent() {
             navigate('/', {replace: true})
     }
 
+    const logout = (event) => {
+        console.log("is this working???")
+        jwtDecode(localStorage.removeItem("jwt"))
+    }
+
 
     return (
         <>
@@ -89,7 +95,9 @@ function NavLoginContent() {
                     <Auth0LogoutButton/>
                     <Auth0Profile/>
                 </div>
+                <button onClick={() => logout()}>Logout</button>
             </div>
+            
             <div className="spacer"/>
             <Footer/>
         </>
