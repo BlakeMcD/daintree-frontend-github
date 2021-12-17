@@ -74,31 +74,36 @@ function NavStoresCreate() {
     return (
         <>
             <Header/>
-            <div className="newStoreContainer">
-                <h1>Add a New Store</h1>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Name:
-                        <input type="text" value={storeName} onChange={handleChangeName}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Description:
-                        <input type="text" value={storeDescription} onChange={handleChangeDescription}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Logo Square URL:
-                        <input type="text" value={storeUrlSquare} onChange={handleChangeUrlSquare}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Logo Square Landscape:
-                        <input type="text" value={storeUrlLandscape} onChange={handleChangeUrlLandscape}/>
-                    </label>
-                    <br/><br/>
-                    <input type="submit" value="Submit" />
-                </form>
+            <div className="newStoreContainerContainer">
+                <div className="newStoreContainerSpacer"/>
+                <div className="newStoreContainer">
+                    <h1>Add a New Store</h1>
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            Name:
+                            <input type="text" value={storeName} onChange={handleChangeName}/>
+                        </label>
+                        <br/><br/>
+                        <label>
+                            Description:
+                            <input type="text" value={storeDescription} onChange={handleChangeDescription}/>
+                        </label>
+                        <br/><br/>
+                        <label>
+                            Logo Square URL:
+                            <input type="text" value={storeUrlSquare} onChange={handleChangeUrlSquare}/>
+                        </label>
+                        <br/><br/>
+                        <label>
+                            Logo Square Landscape:
+                            <input type="text" value={storeUrlLandscape} onChange={handleChangeUrlLandscape}/>
+                        </label>
+                        <br/><br/>
+                        <br/><br/>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+                <div className="newStoreContainerSpacer"/>
             </div>
             <div className="spacer"/>
             <Footer/>

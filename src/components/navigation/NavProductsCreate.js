@@ -25,7 +25,7 @@ function NavProductsCreate() {
     const [productImageUrl, setProductImageUrl] = useState("")
     const [productStoreId, setProductStoreId] = useState(1)
 
-    //admin persmissions
+    //admin permissions
     useEffect( () => {
         const stores = jwtDecode(localStorage.getItem('jwt')).stores
         const check_admin = stores.some(store => name.toLowerCase() === store.toLowerCase())
@@ -129,71 +129,122 @@ function NavProductsCreate() {
     return (
         <>
             <Header/>
-            <div className="newProductContainer">
-                <h1>Add a New Product for {name}</h1>
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        UID:
-                        <input type="text" value={productUid} onChange={handleChangeUid}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Product Name:
-                        <input type="text" value={productName} onChange={handleChangeName}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Category:
-                        <input type="text" value={productCategory} onChange={handleChangeCategory}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Sub Category:
-                        <input type="text" value={productSubCategory} onChange={handleChangeSubCategory}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Description:
-                        <input type="text" value={productDescription} onChange={handleChangeDescription}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Gender:
-                        <input type="text" value={productGender} onChange={handleChangeGender}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Age Group:
-                        <input type="text" value={productAgeGroup} onChange={handleChangeAgeGroup}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Colour:
-                        <input type="text" value={productColour} onChange={handleChangeColour}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Size:
-                        <input type="text" value={productSize} onChange={handleChangeSize}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Stock:
-                        <input type="number" value={productStock} onChange={handleChangeStock}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Price (in cents):
-                        <input type="number" value={productPriceCents} onChange={handleChangePriceCents}/>
-                    </label>
-                    <br/><br/>
-                    <label>
-                        Image URL:
-                        <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
-                    </label>
-                    
-                    <input type="submit" value="Submit" />
-                </form>
+            <div className="newProductContainerContainer">
+                <div className="newStoreContainerSpacer"/>
+                <div className="newProductContainer">
+                    <h1>Add a New Product for {name}</h1>
+                    <form onSubmit={handleSubmit}>
+                        <div className="newProductSubContainer">
+                            <div className="newProductSubContainer__one">
+                                <h3>Label</h3>
+                                <label>
+                                    UID:
+                                    <input type="text" value={productUid} onChange={handleChangeUid}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Product Name:
+                                    <input type="text" value={productName} onChange={handleChangeName}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Category:
+                                    <select onChange={handleChangeCategory}>
+                                        <option selected value="clothing">Clothing</option>
+                                    </select>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Sub Category:
+                                    <select onChange={handleChangeCategory}>
+                                        <option selected value="blank"></option>
+                                        <option selected value="jeans">Jeans</option>
+                                        <option selected value="shirt">Shirt</option>
+                                        <option selected value="jacket">Jacket</option>
+                                    </select>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Description:
+                                    <input type="text" value={productDescription} onChange={handleChangeDescription}/>
+                                </label>
+                                <br/><br/>
+                            </div>
+                            <div className="newProductSubContainer__two">
+                                <h3>Specifications</h3>
+
+                            {/* <select onChange={(event) => {sendStoreToParent(event.target.value)}}>
+                                <option selected value="blank"></option>
+                                <option value="Pact">Pact</option>
+                                <option value="Patagonia">Patagonia</option>
+                                <option value="Quince">Quince</option>
+                                <option value="Reformation">Reformation</option>
+                                <option value="Vetta">Vetta</option>
+                                <option value="Tentree">Tentree</option>
+                                <option value="Boden">Boden</option>
+                                <option value="Summersalt">Summersalt</option>
+                                <option value="Outerknown">Outerknown</option>
+                            </select> */}
+
+
+
+                                <label>
+                                    Gender:
+                                    <select onChange={handleChangeGender}>
+                                        <option selected value="blank"></option>
+                                        <option value="f">Female</option>
+                                        <option value="m">Male</option>
+                                    </select>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Age Group:
+                                    <select onChange={handleChangeAgeGroup}>
+                                        <option selected value="blank"></option>
+                                        <option value="adult">adult</option>
+                                        <option value="teen">teen</option>
+                                        <option value="child">child</option>
+                                        <option value="baby">baby</option>
+                                        <option value="foetus">foetus</option>
+                                    </select>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Colour:
+                                    <input type="text" value={productColour} onChange={handleChangeColour}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Size:
+                                    <select onChange={handleChangeSize}>
+                                        <option selected value="blank"></option>
+                                        <option value="s">Small</option>
+                                        <option value="m">Medium</option>
+                                        <option value="l">Large</option>
+                                    </select>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Stock:
+                                    <input type="number" value={productStock} onChange={handleChangeStock}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Price (in cents):
+                                    <input type="number" value={productPriceCents} onChange={handleChangePriceCents}/>
+                                </label>
+                                <br/><br/>
+                                <label>
+                                    Image URL:
+                                    <input type="text" value={productImageUrl} onChange={handleChangeImageUrl}/>
+                                </label>
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <input type="submit" value="Submit" />
+                    </form>
+                </div>
+                <div className="newStoreContainerSpacer"/>
             </div>
             <div className="spacer"/>
             <Footer/>

@@ -548,7 +548,6 @@ footer {
 /* NEW STORE FORM */
 .newStoreContainer {
   margin: 0 10% 0 10%;
-  text-align: center;
 }
 
 /* FORM CLEANUP */
@@ -560,3 +559,42 @@ footer {
 .emailLogin form {
   width: 300px;
 }
+
+.newStoreContainerContainer {
+  display: flex;
+}
+
+.newStoreContainer label {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.newStoreContainer form {
+  width: 500px;
+}
+
+.newStoreContainerSpacer{
+  flex: 1;
+}
+
+.newProductContainerContainer {
+  display: flex;
+}
+
+.newProductContainer label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newProductContainer form {
+  width: 800px;
+}
+
+.newProductSubContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+  
