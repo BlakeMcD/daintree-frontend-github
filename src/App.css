@@ -228,6 +228,7 @@ footer {
 
 .logoSquareLarge {
   width: 200px;
+  border-radius: 8px;
 }
 
 .brandsContainer {
@@ -257,6 +258,7 @@ footer {
 .storeLogoLandscape {
   text-align: center;
   margin: 0 0 100px 0;
+  border-radius: 8px;
 }
 
 .storeLogoLandscape img {

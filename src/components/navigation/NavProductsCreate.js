@@ -125,9 +125,7 @@ function NavProductsCreate() {
                 //  localStorage.setItem("jwt", data.jwt)
                 }
             )
-            // .catch(error => {
-            //     navigate('/', {replace: true})
-            // })
+            .then (navigate('/collection', {replace: true}))
     }
 
     return (

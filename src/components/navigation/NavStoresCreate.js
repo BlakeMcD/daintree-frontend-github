@@ -69,6 +69,7 @@ function NavStoresCreate() {
                 //  localStorage.setItem("jwt", data.jwt)
                 }
             )
+            .then(navigate('/collection', {replace: true}))
     }
 
     return (
@@ -98,7 +99,6 @@ function NavStoresCreate() {
                             Logo Square Landscape:
                             <input type="text" value={storeUrlLandscape} onChange={handleChangeUrlLandscape}/>
                         </label>
-                        <br/><br/>
                         <br/><br/>
                         <input type="submit" value="Submit" />
                     </form>
