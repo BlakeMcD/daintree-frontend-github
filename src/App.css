@@ -154,11 +154,27 @@ header {
 .headerBox__logo img {
   height: 50px;
 }
+.headerBox__userLinks {
+  position: relative;
+  padding-right: 50px;
+}
 
 .headerBox__userLinks img {
   height: 50px;
   padding: 0px 0px 0px 30px;
 }
+
+
+.headerBox__userLinks a span {
+  text-decoration: none;
+  /* color: white; */
+  position:absolute;
+  top: 25%;
+} 
+
+.headerBox__userLinks a span:hover {
+  /* color: #F0EACE; */
+} 
 
 .headerBox__navIcon a {
   color: white;
@@ -168,9 +184,11 @@ header {
 
 .headerBox__navIcon a:hover {
   color: #F0EACE;
-
 }
 
+.signInElements {
+  color: white;
+}
 
 /* FOOTER */
 footer {
