@@ -6,8 +6,13 @@ import Auth0LogoutButton from '../Auth0LogoutButton'
 import Auth0Profile from '../Auth0Profile'
 import { useNavigate } from "react-router-dom"
 import jwtDecode from 'jwt-decode'
+import { useSelector, useDispatch } from 'react-redux'
+import { login, logout } from './../actions/actionCreator'
 
 function NavLoginContent() {
+
+    const loggedIn = useSelector(state => state.loggedIn)
+    const dispatch = useDispatch()
 
     const navigate = useNavigate();
 
@@ -50,7 +55,9 @@ function NavLoginContent() {
                 //  localStorage.removeItem("jwt")
                 }
             )
-            navigate('/', {replace: true})
+            .then(dispatch(login()))
+            .then(navigate('/', {replace: true}))
+            
     }
 
     const logout = (event) => {
@@ -82,7 +89,7 @@ function NavLoginContent() {
             <h1>Login</h1>
             <div className="loginContainer">
                 <div className="loginContainer__email">
-                    <h3 className="loginContainer__header">Login with your email</h3>
+                    {/* <h3 className="loginContainer__header">Login with your email</h3> */}
                     <div className="emailLogin">
                         <form onSubmit={handleSubmit}>
                             <label>
@@ -104,16 +111,16 @@ function NavLoginContent() {
                         <a href="/users/new">Sign up</a>
                     </div>
                 </div>
-                <div className="loginContainer__auth0">
+                {/* <div className="loginContainer__auth0">
                     <h3 className="loginContainer__header">Login with your social account</h3>
                     <Auth0LoginButton/>
                     <br/>
                     <br/>
                     <Auth0LogoutButton/>
                     <Auth0Profile/>
-                </div>
+                </div> */}
             </div>
-            <button onClick={() => logout()}>Logout</button>
+            {/* <button onClick={() => logout()}>Logout</button> */}
             <div className="spacer"/>
             <Footer/>
         </>

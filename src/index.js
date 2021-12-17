@@ -9,12 +9,14 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import countReducer from './reducers/countReducer';
 import cartReducer from './reducers/cartReducer';
+import loginReducer from './reducers/loginReducer';
 import { Auth0Provider } from "@auth0/auth0-react";
 
 //REDUCER
 const rootReducer = combineReducers({
   count: countReducer,
-  cart: cartReducer
+  cart: cartReducer, 
+  loggedIn: loginReducer
 })
 
 //STORE
