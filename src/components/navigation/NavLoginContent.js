@@ -76,6 +76,9 @@ function NavLoginContent() {
                             <br/>
                             <input type="submit" value="Submit" />
                         </form>
+                        <br/><br/>
+                        <span><b><i>Don't have an account? </i></b></span>
+                        <a href="/users/create">Sign up</a>
                     </div>
                 </div>
                 <div className="loginContainer__auth0">
